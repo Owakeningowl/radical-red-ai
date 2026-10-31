@@ -1,0 +1,14 @@
+foe KOs, AI slower, bench fast KO: 33/40 = 82%
+foe KOs, AI faster, bench fast KO: 27/40 = 67%
+harmless foe, AI cannot KO, bench fast KO: 26/40 = 65%
+harmless foe, AI can 2HKO, bench fast KO: 34/40 = 85%
+harmless foe, AI can KO, bench fast KO: 0/40 = 0%
+foe 3HKOs, AI cannot KO, bench fast KO: 23/40 = 57%
+foe 3HKOs, AI cannot 2HKO, bench wall: 60/80 = 75%
+foe 3HKOs, AI can 2HKO, bench wall: 38/80 = 47%
+foe does under 1/3, AI cannot 2HKO, bench wall: 29/40 = 72%
+absorb: weak Thunderbolt, foe stall style: 0/40 = 0%
+absorb: weak Thunderbolt, foe attacker: 0/40 = 0%
+absorb: strong Thunderbolt, foe attacker: 28/40 = 70%
+absorb: strong T-bolt, AI can KO foe: 0/40 = 0%
+absorb: T-bolt not predicted: 0/40 = 0%

@@ -1,0 +1,10 @@
+weak T-bolt, Jolteon full HP: 0/24 = 0%
+weak T-bolt, Jolteon hurt: 15/24 = 62%
+weak Flamethrower, Flash Fire: 16/24 = 66%
+same, your style not attacker: 0/24 = 0%
+same, AI slower and can KO you: 19/24 = 79%
+same, AI faster and can KO you: 0/24 = 0%
+same, AI +1 boost: 20/24 = 83%
+same, AI +2 boost: 0/24 = 0%
+T-bolt predicted, only Flash Fire back: 0/24 = 0%
+strong T-bolt 2HKO, Jolteon full: 17/24 = 70%

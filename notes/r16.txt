@@ -1,0 +1,31 @@
+--- baseline
+no reason, harmless foe: switched 0/40 = 0%  {'stay': 40}
+--- avoid death (foe KOs AI, AI moves second, AI cannot KO)
+bench wall: switched 31/40 = 77%  {'switch6': 31, 'stay': 9}
+bench only dies: switched 0/40 = 0%  {'stay': 40}
+bench fast KO that survives: switched 0/40 = 0%  {'stay': 40}
+AI faster instead: switched 28/40 = 70%  {'stay': 12, 'switch6': 28}
+AI low HP 15%: switched 28/40 = 70%  {'switch6': 28, 'stay': 12}
+AI paralysed under 1/3: switched 26/40 = 65%  {'switch6': 26, 'stay': 14}
+AI can KO foe but slower: switched 32/40 = 80%  {'switch6': 32, 'stay': 8}
+AI can KO foe and faster: switched 0/40 = 0%  {'stay': 40}
+--- save the sweeper (AI faster, cannot KO; foe can KO)
+fast KO bench: switched 0/40 = 0%  {'stay': 40}
+no threat, fast KO bench: switched 27/40 = 67%  {'switch6': 27, 'stay': 13}
+--- only bad moves
+no attacks at all, harmless foe: switched 0/40 = 0%  {'stay': 40}
+all attacks immune (foe Ghost): switched 31/40 = 77%  {'stay': 9, 'switch6': 31}
+all immune, bench dies: switched 0/40 = 0%  {'stay': 40}
+--- status
+Cursed: switched 27/40 = 67%  {'switch6': 27, 'stay': 13}
+Nightmare: switched 29/40 = 72%  {'stay': 11, 'switch6': 29}
+Leech Seed: switched 6/40 = 15%  {'stay': 34, 'switch6': 6}
+Toxic count 3: switched 0/40 = 0%  {'stay': 40}
+Toxic count 7: switched 29/40 = 72%  {'switch6': 29, 'stay': 11}
+Asleep: switched 12/40 = 30%  {'stay': 28, 'switch6': 12}
+Perish 1: switched 26/40 = 65%  {'switch6': 26, 'stay': 14}
+Yawn: switched 0/40 = 0%  {'stay': 40}
+Burned: switched 0/40 = 0%  {'stay': 40}
+Atk -3 physical only: switched 27/40 = 67%  {'stay': 13, 'switch6': 27}
+SpA -3 special only: switched 28/40 = 70%  {'switch6': 28, 'stay': 12}
+Atk -2 physical only: switched 0/40 = 0%  {'stay': 40}

@@ -1,0 +1,16 @@
+from lab import *
+L = Lab()
+A4 = ['Flamethrower', 'Thunderbolt', 'Psychic', 'Tackle']
+foe = dict(moves=['Tackle', 'Pound', 'Scratch', 'Quick Attack'], atk=30, spa=30, dfn=100, spd=100, spe=50)
+ai = dict(moves=A4, spe=100)
+L.show('no KO, faster', ai, foe, 3)
+L.show('no KO, slower', dict(ai, spe=30), foe, 3)
+L.show('KO with 90bp, faster', ai, dict(foe, hp=30), 3)
+L.show('KO with 90bp, slower', dict(ai, spe=30), dict(foe, hp=30), 3)
+L.show('AI faster, all KO', ai, dict(foe, hp=5), 3)
+big = dict(foe, atk=900, spa=900, moves=['Earthquake', 'Pound', 'Scratch', 'Tackle'])
+L.show('foe can KO, AI faster, no KO', ai, big, 3)
+L.show('foe can KO, AI slower, no KO', dict(ai, spe=30), dict(big, spe=100), 3)
+L.show('foe can KO, AI slower, has priority', dict(ai, spe=30, moves=['Flamethrower', 'Thunderbolt', 'Psychic', 'Quick Attack']), dict(big, spe=100), 3)
+L.show('slower, priority KO', dict(ai, spe=30, moves=['Flamethrower', 'Thunderbolt', 'Psychic', 'Quick Attack']), dict(big, spe=100, hp=10), 3)
+L.quit()

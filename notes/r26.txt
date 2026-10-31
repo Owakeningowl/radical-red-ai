@@ -1,0 +1,57 @@
+-- KO by style
+Attacker 1 fastKO 9 | slowKO 8 | slowKO lastmon? 8 | noKO 2 | foeKOs,AI faster 9
+Setup 2 fastKO 9 | slowKO 6 | slowKO lastmon? 6 | noKO 5 | foeKOs,AI faster 9
+Status 3 fastKO 9 | slowKO 8 | slowKO lastmon? 8 | noKO 5 | foeKOs,AI faster 9
+Stall 5 fastKO 9 | slowKO 8 | slowKO lastmon? 8 | noKO 4 | foeKOs,AI faster 4/8
+Baton 6 fastKO 9 | slowKO 3 | slowKO lastmon? 8 | noKO 2 | foeKOs,AI faster 9
+Cleric 7 fastKO 9 | slowKO 6 | slowKO lastmon? 7 | noKO 2 | foeKOs,AI faster 9
+Screens 8 fastKO 15 | slowKO 15 | slowKO lastmon? 15 | noKO 15 | foeKOs,AI faster 15
+ScreenSw 8 fastKO 15 | slowKO 15 | slowKO lastmon? 15 | noKO 15 | foeKOs,AI faster 15
+Phazer 9 fastKO 9 | slowKO 8 | slowKO lastmon? 8 | noKO 2 | foeKOs,AI faster 2
+Hazards 10 fastKO 9 | slowKO 4 | slowKO lastmon? 6 | noKO 4 | foeKOs,AI faster 4/9
+-- misc damage
+slow KO with Protect in set: Flamethrower 0/2 (style 3, sw 0/3)
+speed tie KO: Tackle 8 (style 1, sw 0/3)
+speed 1 faster KO: Tackle 9 (style 1, sw 0/3)
+low accuracy KO vs high accuracy KO: Stone Edge: Stone Edge 0 (style 1, sw 0/3)
+same, the Rock Slide: Stone Edge 9 (style 1, sw 0/3)
+only inaccurate KO: Stone Edge 9 (style 5, sw 0/3)
+immune: Earthquake -100 (style 3, sw 0/3)
+absorb ability: Thunderbolt -20 (style 3, sw 0/3)
+Explosion, not KO: Explosion 2 (style 1, sw 0/3)
+Explosion, can KO: Explosion 9 (style 1, sw 0/3)
+recoil Double-Edge: Double-Edge 0 (style 1, sw 0/3)
+Close Combat: Close Combat 9 (style 1, sw 0/3)
+Overheat: Overheat 2 (style 1, sw 0/3)
+Focus Punch: Focus Punch -1 (style 1, sw 0/3)
+Hyper Beam: Hyper Beam 2 (style 1, sw 0/3)
+Giga Drain, AI hurt, foe 2HKOs, AI slower: Giga Drain 0 (style 3, sw 0/3)
+Sucker Punch: Sucker Punch 0 (style 3, sw 0/3)
+Nuzzle 100% para: Nuzzle 6 (style 3, sw 0/3)
+Flame Charge: Flame Charge 5 (style 3, sw 0/3)
+Power-Up Punch: PowerUpPunch 5 (style 2, sw 0/3)
+Icy Wind AI slower: Icy Wind 0 (style 1, sw 0/3)
+Fake Out, not first turn?: Fake Out 8 (style 1, sw 0/3)
+-- speed and weather
+Thunder Wave faster: Thunder Wave 3 (style 3, sw 0/3)
+Stun Spore faster: Stun Spore 3 (style 3, sw 0/3)
+Glare faster: Glare 3 (style 3, sw 0/3)
+Light Screen, foe special: Light Screen 15 (style 8, sw 0/3)
+Light Screen, foe physical: Light Screen 15 (style 8, sw 0/3)
+Reflect, foe special: Reflect 15 (style 8, sw 0/3)
+Aurora Veil in hail: Aurora Veil 8 (style 8, sw 0/3)
+Aurora Veil no hail: Aurora Veil -2 (style 8, sw 0/3)
+Tailwind: Tailwind 5 (style 3, sw 0/3)
+Trick Room slower team: Trick Room 7 (style 3, sw 0/3)
+Rain Dance water user: Rain Dance 6 (style 3, sw 0/3)
+Rain Dance no reason: Rain Dance 6 (style 3, sw 0/3)
+Sunny Day fire user: Sunny Day 6 (style 3, sw 0/3)
+Sandstorm: Sandstorm 0 (style 3, sw 0/3)
+Traceback (most recent call last):
+    S('Hail no reason', 'Hail', {}, {}, base=['Earthquake','Toxic','Thunderbolt'])
+    r = L.run(a, f, n)
+    self.side(1, **ai); self.side(0, **foe)
+    moves=[mv(m) for m in moves] if moves else None) if moves else b.active(slot, atk=d['atk'], dfn=d['dfn'], spe=d['spe'], spa=d['spa'], spd=d['spd'], hp=d['hp'], maxhp=d['maxhp'], status1=d['status1'], status2=d['status2'], status3=d['status3'])
+    moves=[mv(m) for m in moves] if moves else None) if moves else b.active(slot, atk=d['atk'], dfn=d['dfn'], spe=d['spe'], spa=d['spa'], spd=d['spd'], hp=d['hp'], maxhp=d['maxhp'], status1=d['status1'], status2=d['status2'], status3=d['status3'])
+    def mv(n): return ID[n] if isinstance(n, str) else n
+KeyError: 'Hail'

@@ -1,0 +1,508 @@
+rom_address	name	file	name_source
+0x90c3b48	BetterToKOLastFoeMon	ai_advanced.c	matched to public CFRU
+0x90c3b7a	ShouldUseSubstitute	ai_advanced.c	matched to public CFRU
+0x90c3c20	IsWorthSettingHazards	ai_advanced.c	read by hand
+0x90c3c64	ShouldTryToSetUpStat	ai_advanced.c	matched to public CFRU
+0x90c3f80	GoodIdeaToSwapTimers	ai_advanced.c	matched to public CFRU
+0x90c3faa	IsClassKillerSweeper	ai_advanced.c	matched to public CFRU
+0x90c3fb2	IsClassTeamSupport	ai_advanced.c	matched to public CFRU
+0x90c3fc4	IsClassBatonPass	ai_advanced.c	matched to public CFRU
+0x90c3fcc	IsClassScreener	ai_advanced.c	matched to public CFRU
+0x90c3fd8	IsClassSupportScreener	ai_advanced.c	matched to public CFRU
+0x90c3ff6	IsClassCleric	ai_advanced.c	matched to public CFRU
+0x90c3ffe	IsClassDoublesPhazer	ai_advanced.c	matched to public CFRU
+0x90c4006	IsClassPhazer	ai_advanced.c	matched to public CFRU
+0x90c4016	IsClassEntryHazards	ai_advanced.c	matched to public CFRU
+0x90c401e	IsClassDoublesAllOutAttacker	ai_advanced.c	matched to public CFRU
+0x90c4026	IsClassDoublesSetupAttacker	ai_advanced.c	matched to public CFRU
+0x90c402e	IsClassDoublesTrickRoomSetup	ai_advanced.c	matched to public CFRU
+0x90c4036	IsClassDoublesTrickRoomer	ai_advanced.c	matched to public CFRU
+0x90c4048	IsClassDoublesUtility	ai_advanced.c	matched to public CFRU
+0x90c4050	IsClassDoublesTeamSupport	ai_advanced.c	matched to public CFRU
+0x90c4062	IsClassDoublesSpecific	ai_advanced.c	matched to public CFRU
+0x90c407c	IsClassDoublesAttacker	ai_advanced.c	matched to public CFRU
+0x90c408e	IsClassDamager	ai_advanced.c	matched to public CFRU
+0x90c40ac	IsClassGoodToTaunt	ai_advanced.c	matched to public CFRU
+0x90c40c4	PredictFightingStyle	ai_advanced.c	matched to public CFRU
+0x90c4618	PredictBankFightingStyle	ai_advanced.c	matched to public CFRU
+0x90c46dc	GetBankFightingStyle	ai_advanced.c	matched to public CFRU
+0x90c470c	ShouldPrioritizeKOingFoesDoubles	ai_advanced.c	matched to public CFRU
+0x90c4744	ShouldPrioritizeMostDamageDoubles	ai_advanced.c	matched to public CFRU
+0x90c478c	ShouldPrioritizeDangerousTarget	ai_advanced.c	matched to public CFRU
+0x90c47c4	ShouldTrap	ai_advanced.c	matched to public CFRU
+0x90c4818	GetAmountToRecoverBy	ai_advanced.c	matched to public CFRU
+0x90c4c08	ShouldRecover	ai_advanced.c	matched to public CFRU
+0x90c4cc8	ShouldProtect	ai_advanced.c	matched to public CFRU
+0x90c4ffc	ShouldPhaze	ai_advanced.c	matched to public CFRU
+0x90c51c0	ShouldUseWishAromatherapy	ai_advanced.c	matched to public CFRU
+0x90c5384	MoveSplitOnTeam	ai_advanced.c	matched to public CFRU
+0x90c5400	ShouldSetUpScreens	ai_advanced.c	matched to public CFRU
+0x90c562c	ShouldUseFakeOut	ai_advanced.c	matched to public CFRU
+0x90c5704	ShouldPivot	ai_advanced.c	matched to public CFRU
+0x90c5c38	BankLikelyToUseMoveSplit	ai_advanced.c	matched to public CFRU
+0x90c5c90	IncreaseStatusViability	ai_advanced.c	matched to public CFRU
+0x90c5d0c	IncreaseStatViability	ai_advanced.c	matched to public CFRU
+0x90c60bc	IncreaseSleepViability	ai_advanced.c	matched to public CFRU
+0x90c6370	IncreaseSubstituteViability	ai_advanced.c	matched to public CFRU
+0x90c64ec	IncreaseEntryHazardsViability	ai_advanced.c	matched to public CFRU
+0x90c67a4	IncreaseFakeOutViability	ai_advanced.c	matched to public CFRU
+0x90c6938	IncreasePivotViability	ai_advanced.c	matched to public CFRU
+0x90c69f4	IncreaseViabilityForSlowKOMove	ai_advanced.c	matched to public CFRU
+0x90c6abc	IncreaseFoeProtectionViability	ai_advanced.c	matched to public CFRU
+0x90c6b2e	IncreaseAllyProtectionViability	ai_advanced.c	matched to public CFRU
+0x90c6b70	IncreaseTeamProtectionViability	ai_advanced.c	matched to public CFRU
+0x90c6bb2	IncreaseTailwindViability	ai_advanced.c	matched to public CFRU
+0x90c6c2e	IncreaseHelpingHandViability	ai_advanced.c	matched to public CFRU
+0x90c6c74	IncreaseHealPartnerViability	ai_advanced.c	matched to public CFRU
+0x90c6ce0	IncreasePsychUpViability	ai_advanced.c	matched to public CFRU
+0x90c6dd0	IncreaseViabilityForSpeedControl	ai_advanced.c	matched to public CFRU
+0x90c6e5c	IncreaseDoublesDamageViability	ai_advanced.c	matched to public CFRU
+0x90c6ea4	IncreaseDoublesDamageViabilityToScore	ai_advanced.c	matched to public CFRU
+0x90c6f3c	BattleAI_DoAIProcessing	ai_master.c	matched to public CFRU
+0x90c7008	TryTempMegaEvolveAllBanks	ai_master.c	matched to public CFRU
+0x90c7120	WontHitTargetWithMove	ai_master.c	matched to public CFRU
+0x90c7180	HasChosenToDamageTarget	ai_master.c	matched to public CFRU
+0x90c71e0	PartnerWillKOTargetBeforeItCanAttack	ai_master.c	matched to public CFRU
+0x90c722c	HittingTargetWithUselessStatusMove	ai_master.c	matched to public CFRU
+0x90c7298	GetTotalDamageForTargets	ai_master.c	matched to public CFRU
+0x90c7330	GetTargetsKnockedOut	ai_master.c	matched to public CFRU
+0x90c7524	UpdateBestDoublesKillingMoves	ai_master.c	matched to public CFRU
+0x90c77b0	GetAIFlags	ai_master.c	matched to public CFRU
+0x90c7880	BattleAI_SetupAIData	ai_master.c	matched to public CFRU
+0x90c7988	BattleAI_HandleItemUseBeforeAISetup	ai_master.c	matched to public CFRU
+0x90c7a1c	PopulateAIScriptStructWithBaseAttackerData	ai_master.c	matched to public CFRU
+0x90c7ad4	PopulateAIScriptStructWithBaseDefenderData	ai_master.c	matched to public CFRU
+0x90c7b8c	CalculateAIPredictions	ai_master.c	matched to public CFRU
+0x90c82c0	BattleAI_ChooseMoveOrAction	ai_master.c	matched to public CFRU
+0x90c8ba4	ClearCachedAIData	ai_master.c	matched to public CFRU
+0x90c8ca4	PickRaidBossRepeatedMove	ai_master.c	matched to public CFRU
+0x90c8f04	RechooseAIMoveAfterSwitchIfNecessary	ai_master.c	matched to public CFRU
+0x90c904c	AIScript_Negatives	ai_negatives.c	matched to public CFRU
+0x90cfe04	AIScript_Roaming	ai_negatives.c	matched to public CFRU
+0x90cfe5c	AIScript_Safari	ai_negatives.c	matched to public CFRU
+0x90cfeac	AIScript_FirstBattle	ai_negatives.c	matched to public CFRU
+0x93507cc	PartnerMoveEffectIsStatusSameTarget	ai_negatives.c	read by hand
+0x90c5aa8	sub_90c5aa8	ai_other.c	unnamed
+0x90c70ec	sub_90c70ec	ai_other.c	unnamed
+0x90c748c	sub_90c748c	ai_other.c	unnamed
+0x90c74d0	sub_90c74d0	ai_other.c	unnamed
+0x90c75b8	sub_90c75b8	ai_other.c	unnamed
+0x90d7008	sub_90d7008	ai_other.c	unnamed
+0x90da104	sub_90da104	ai_other.c	unnamed
+0x90db3e8	sub_90db3e8	ai_other.c	unnamed
+0x90db47c	sub_90db47c	ai_other.c	unnamed
+0x90db59c	sub_90db59c	ai_other.c	unnamed
+0x90dba10	sub_90dba10	ai_other.c	unnamed
+0x90dc344	sub_90dc344	ai_other.c	unnamed
+0x90dc84c	sub_90dc84c	ai_other.c	unnamed
+0x90dd758	sub_90dd758	ai_other.c	unnamed
+0x90dd85a	sub_90dd85a	ai_other.c	unnamed
+0x90ddfa4	sub_90ddfa4	ai_other.c	unnamed
+0x90de930	sub_90de930	ai_other.c	unnamed
+0x90dfa24	sub_90dfa24	ai_other.c	unnamed
+0x90dfd28	sub_90dfd28	ai_other.c	unnamed
+0x90e031c	sub_90e031c	ai_other.c	unnamed
+0x90e0364	sub_90e0364	ai_other.c	unnamed
+0x9350518	sub_9350518	ai_other.c	unnamed
+0x93505ac	sub_93505ac	ai_other.c	unnamed
+0x9350712	sub_9350712	ai_other.c	unnamed
+0x93508b0	sub_93508b0	ai_other.c	unnamed
+0x9350ac6	sub_9350ac6	ai_other.c	unnamed
+0x93510ce	sub_93510ce	ai_other.c	unnamed
+0x9351174	sub_9351174	ai_other.c	unnamed
+0x9351292	sub_9351292	ai_other.c	unnamed
+0x93513c0	sub_93513c0	ai_other.c	unnamed
+0x90cfef4	AIScript_Partner	ai_partner.c	matched to public CFRU
+0x90d10d4	AIScript_Positives	ai_positives.c	matched to public CFRU
+0x90d6998	AIScript_SemiSmart	ai_positives.c	matched to public CFRU
+0x90d6d08	PredictedMoveWontKOMon	ai_switching.c	matched to public CFRU
+0x90d6da8	PassOnWishSwitchingCheck	ai_switching.c	matched to public CFRU
+0x90d6e30	TheCalcForSemiInvulnerableTroll	ai_switching.c	matched to public CFRU
+0x90d6f7c	RunAllSemiInvulnerableLockedMoveCalcs.isra.0	ai_switching.c	matched to public CFRU
+0x90d70ac	LoadBattlersAndFoes	ai_switching.c	matched to public CFRU
+0x90d714c	ResetBestMonToSwitchInto	ai_switching.c	matched to public CFRU
+0x90d7168	CalcMostSuitableMonToSwitchInto	ai_switching.c	matched to public CFRU
+0x90d7f1c	CalcMostSuitableMonSwitchIfNecessary	ai_switching.c	matched to public CFRU
+0x90d7f7c	GetSecondMostSuitableMonToSwitchIntoFlags	ai_switching.c	matched to public CFRU
+0x90d7fe4	GetMostSuitableMonToSwitchIntoFlags	ai_switching.c	matched to public CFRU
+0x90d8050	GetMostSuitableMonToSwitchIntoScore	ai_switching.c	matched to public CFRU
+0x90d80cc	GetSecondMostSuitableMonToSwitchIntoByParty	ai_switching.c	matched to public CFRU
+0x90d8168	GetMostSuitableMonToSwitchIntoByParty	ai_switching.c	matched to public CFRU
+0x90d824c	ShouldSwitch	ai_switching.c	matched to public CFRU
+0x90d9d78	RemoveBestMonToSwitchInto	ai_switching.c	matched to public CFRU
+0x9350a5e	ConfirmAISwitch	ai_switching.c	read by hand
+0x9350fbe	PredictedMoveWontDoTooMuchToMon	ai_switching.c	read by hand
+0x935113a	PredictedMoveKOsSelfDueToContact	ai_switching.c	read by hand
+0x93511d8	ShouldSwitchToAvoidDeathHelper	ai_switching.c	read by hand
+0x9351372	SwitchToBestResistMonHelper	ai_switching.c	read by hand
+0x90d9db0	MoveCantHitTarget	ai_util.c	matched to public CFRU
+0x90d9e10	MoveAlwaysHitsTarget	ai_util.c	matched to public CFRU
+0x90d9e94	ShouldAIFreeChoiceLockWithDynamax	ai_util.c	matched to public CFRU
+0x90d9f90	MoveWillHit	ai_util.c	matched to public CFRU
+0x90da00c	MonMoveWillHit	ai_util.c	matched to public CFRU
+0x90da062	MoveWouldHitBeforeOtherMove	ai_util.c	matched to public CFRU
+0x90da0d2	MoveWouldHitFirst	ai_util.c	matched to public CFRU
+0x90da168	IsBankAsleep	ai_util.c	matched to public CFRU
+0x90da18c	IsUsefulToFlinchTarget	ai_util.c	matched to public CFRU
+0x90da1c4	IsBankIncapacitated	ai_util.c	matched to public CFRU
+0x90da23a	WillFaintFromWeatherSoon	ai_util.c	matched to public CFRU
+0x90da278	WillTakeSignificantDamageFromEntryHazards	ai_util.c	matched to public CFRU
+0x90da350	CanBeFlinched	ai_util.c	matched to public CFRU
+0x90da394	CountBanksPositiveStatStages	ai_util.c	matched to public CFRU
+0x90da3c4	CountBanksNegativeStatStages	ai_util.c	matched to public CFRU
+0x90da3f4	GetPokemonOnSideSpeedAverage	ai_util.c	matched to public CFRU
+0x90da454	GetTeamMaxSpeed	ai_util.c	matched to public CFRU
+0x90da4e6	WillBeFasterAfterSpeedDrop	ai_util.c	matched to public CFRU
+0x90da554	WillBeFasterAfterMoveSpeedBuff	ai_util.c	matched to public CFRU
+0x90da604	GetBattleMonMove	ai_util.c	matched to public CFRU
+0x90da64c	GetMonAbilityAfterTrace	ai_util.c	matched to public CFRU
+0x90da684	TryReplaceImposterAbility	ai_util.c	matched to public CFRU
+0x90da6aa	IsDamagingMoveUnusableByMon	ai_util.c	matched to public CFRU
+0x90da8a4	GetFinalAIMoveDamageFromParty	ai_util.c	matched to public CFRU
+0x90da9d0	MoveKnocksOutFromParty	ai_util.c	matched to public CFRU
+0x90daa78	CanKnockOutFromParty	ai_util.c	matched to public CFRU
+0x90dab2c	IsStatRecoilMove	ai_util.c	matched to public CFRU
+0x90dab4c	GetMonPassiveRecovery	ai_util.c	matched to public CFRU
+0x90dac90	GetAIChosenMove	ai_util.c	matched to public CFRU
+0x90dad00	IsTrapped	ai_util.c	matched to public CFRU
+0x90dadcc	ShouldUseHumanLikelyMove	ai_util.c	matched to public CFRU
+0x90dadf8	GetSecondaryEffectDamage	ai_util.c	matched to public CFRU
+0x90daf00	IsTakingSecondaryDamage	ai_util.c	matched to public CFRU
+0x90daf5c	WillFaintFromSecondaryDamage	ai_util.c	matched to public CFRU
+0x90db070	GetContactDamage	ai_util.c	matched to public CFRU
+0x90db144	GetContactDamageMonDef	ai_util.c	matched to public CFRU
+0x90db19a	HighChanceOfBeingImmobilized	ai_util.c	matched to public CFRU
+0x90db220	CalcSecondaryEffectChance	ai_util.c	matched to public CFRU
+0x90db270	CalcAIAccuracy	ai_util.c	matched to public CFRU
+0x90db2b0	ShouldPredictBankToMegaEvolve	ai_util.c	matched to public CFRU
+0x90db378	BadIdeaToPutToSleep	ai_util.c	matched to public CFRU
+0x90db402	IsValidMovePrediction	ai_util.c	matched to public CFRU
+0x90db424	IsPredictedToSwitch	ai_util.c	matched to public CFRU
+0x90db460	StoreSwitchPrediction	ai_util.c	matched to public CFRU
+0x90db690	MoveInMovesetAndUsable	ai_util.c	matched to public CFRU
+0x90db6c0	DamagingMoveInMoveset	ai_util.c	matched to public CFRU
+0x90db720	PhysicalMoveInMoveset	ai_util.c	matched to public CFRU
+0x90db784	GoodIdeaToParalyzeSelf	ai_util.c	matched to public CFRU
+0x90db7dc	BadIdeaToParalyze	ai_util.c	matched to public CFRU
+0x90db8c0	GoodIdeaToPoisonSelf	ai_util.c	read by hand
+0x90db99c	RealPhysicalMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dba64	SpecialMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dbac8	CountUsefulStatChanges	ai_util.c	matched to public CFRU
+0x90dbba0	GoodIdeaToBurnSelf	ai_util.c	matched to public CFRU
+0x90dbc14	BadIdeaToBurn	ai_util.c	matched to public CFRU
+0x90dbd78	MoveSplitInMoveset	ai_util.c	matched to public CFRU
+0x90dbda8	PhysicalMoveInMonMoveset	ai_util.c	matched to public CFRU
+0x90dbe14	SpecialMoveInMonMoveset	ai_util.c	matched to public CFRU
+0x90dbe7c	MagicCoatableMovesInMoveset	ai_util.c	matched to public CFRU
+0x90dbed4	HasProtectionMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dbfa4	HasContactProtectionMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dc010	BadIdeaToMakeContactWith	ai_util.c	matched to public CFRU
+0x90dc130	MoveTypeInMoveset	ai_util.c	matched to public CFRU
+0x90dc178	DamagingMoveTypeInMoveset	ai_util.c	matched to public CFRU
+0x90dc1d8	DamagingAllHitMoveTypeInMoveset	ai_util.c	matched to public CFRU
+0x90dc29c	HasSnatchableMove	ai_util.c	matched to public CFRU
+0x90dc2f4	MoveEffectInMoveset	ai_util.c	matched to public CFRU
+0x90dc410	StatusMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dc458	IsSuckerPunchOkayToUseThisRound	ai_util.c	matched to public CFRU
+0x90dc540	IsDamagingMoveUnusable	ai_util.c	matched to public CFRU
+0x90dc7d8	IsUsablePhazingMove	ai_util.c	matched to public CFRU
+0x90dc8d0	DamagingPriorityMoveInMovesetThatAffects	ai_util.c	matched to public CFRU
+0x90dc950	MoveInMovesetWithAccuracyLessThan	ai_util.c	matched to public CFRU
+0x90dc9d4	AllMovesInMovesetWithAccuracyLessThan	ai_util.c	matched to public CFRU
+0x90dca74	FlinchingMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dcac8	HealingMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dcb28	HealingMoveInMonMoveset	ai_util.c	matched to public CFRU
+0x90dcb8c	SoundMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dcbd0	MoveThatCanHelpAttacksHitInMoveset	ai_util.c	matched to public CFRU
+0x90dcc54	DamagingMoveThaCanBreakThroughSubstituteInMoveset	ai_util.c	matched to public CFRU
+0x90dccb0	ContactMovesThatAffectTargetInMoveset	ai_util.c	matched to public CFRU
+0x90dcd0c	BadIdeaToPoison	ai_util.c	read by hand
+0x90dce78	SleepMoveInMovesetWithLowAccuracy	ai_util.c	matched to public CFRU
+0x90dced4	PivotingMoveInMovesetThatAffects	ai_util.c	matched to public CFRU
+0x90dcf5c	FastPivotingMoveInMovesetThatAffects	ai_util.c	matched to public CFRU
+0x90dd068	OffensiveSetupMoveInMoveset	ai_util.c	matched to public CFRU
+0x90dd1b0	PhazingMoveInMovesetThatAffects	ai_util.c	matched to public CFRU
+0x90dd1fc	HazardClearingMoveInMovesetThatAffects	ai_util.c	matched to public CFRU
+0x90dd280	DoubleDamageWithStatusMoveInMovesetThatAffects	ai_util.c	matched to public CFRU
+0x90dd2ec	HasUsedMove	ai_util.c	matched to public CFRU
+0x90dd318	HasUsedMoveWithEffect	ai_util.c	matched to public CFRU
+0x90dd354	HasUsedMoveWithEffectHigherThanChance	ai_util.c	matched to public CFRU
+0x90dd3a0	HasUsedPhazingMoveThatAffects	ai_util.c	matched to public CFRU
+0x90dd40c	BadIdeaToRaiseStatAgainst	ai_util.c	matched to public CFRU
+0x90dd46e	BadIdeaToRaiseAccuracyAgainst	ai_util.c	matched to public CFRU
+0x90dd4e8	GoodIdeaToRaiseAccuracyAgainst	ai_util.c	matched to public CFRU
+0x90dd510	BadIdeaToRaiseSpeedAgainst	ai_util.c	matched to public CFRU
+0x90dd5a0	GoodIdeaToRaiseSpeedAgainst	ai_util.c	matched to public CFRU
+0x90dd5f4	BadIdeaToRaiseSpDefenseAgainst	ai_util.c	matched to public CFRU
+0x90dd670	GoodIdeaToRaiseSpDefenseAgainst	ai_util.c	matched to public CFRU
+0x90dd698	BadIdeaToRaiseSpAttackAgainst	ai_util.c	matched to public CFRU
+0x90dd714	GoodIdeaToRaiseSpAttackAgainst	ai_util.c	matched to public CFRU
+0x90dd7bc	AnyStatIsRaised	ai_util.c	matched to public CFRU
+0x90dd7e8	CountUsefulBoosts	ai_util.c	matched to public CFRU
+0x90dd7f4	CountUsefulDebuffs	ai_util.c	matched to public CFRU
+0x90dd800	CountUsefulBoostsOfBankForBank	ai_util.c	matched to public CFRU
+0x90dd80a	CountUsefulDebuffsOfBankForBank	ai_util.c	matched to public CFRU
+0x90dd814	GoodIdeaToSwapStatStages	ai_util.c	matched to public CFRU
+0x90dd920	AnyUsefulOffseniveStatIsRaised	ai_util.c	read by hand
+0x90dd974	PartyMemberStatused	ai_util.c	matched to public CFRU
+0x90dd9bc	GetAIMoveEffectForMaxMove	ai_util.c	matched to public CFRU
+0x90ddcdc	ClearShouldAIUseZMoveByMoveAndMovePos	ai_util.c	matched to public CFRU
+0x90ddcfc	CalcAIDynamaxMon	ai_util.c	matched to public CFRU
+0x90de018	TryReplaceMoveWithZMove	ai_util.c	matched to public CFRU
+0x90de0dc	CalcStrongestMoveIgnoringMove	ai_util.c	matched to public CFRU
+0x90de4ec	RecalcStrongestMoveIgnoringMove	ai_util.c	matched to public CFRU
+0x90de514	CalcStrongestMove	ai_util.c	matched to public CFRU
+0x90de51e	GetStrongestMove	ai_util.c	matched to public CFRU
+0x90de560	IsStrongestMoveHPDrainingMove	ai_util.c	matched to public CFRU
+0x90de584	BadIdeaToRaiseDefenseAgainst	ai_util.c	matched to public CFRU
+0x90de634	GoodIdeaToRaiseDefenseAgainst	ai_util.c	matched to public CFRU
+0x90de66e	BadIdeaToRaiseAttackAgainst	ai_util.c	matched to public CFRU
+0x90de720	GoodIdeaToRaiseAttackAgainst	ai_util.c	matched to public CFRU
+0x90de740	CalcFinalAIMoveDamage	ai_util.c	matched to public CFRU
+0x90dea44	GetAIAbility	ai_util.c	matched to public CFRU
+0x90deac4	GetFinalAIMoveDamage	ai_util.c	matched to public CFRU
+0x90deb8c	ResistsAllMoves	ai_util.c	matched to public CFRU
+0x90debfc	OnlyBadMovesLeftInMoveset	ai_util.c	matched to public CFRU
+0x90def80	ResistsAllMovesAtFullHealth	ai_util.c	matched to public CFRU
+0x90defa0	CalculateMoveKnocksOutXHits	ai_util.c	matched to public CFRU
+0x90defc4	MoveKnocksOutXHits	ai_util.c	matched to public CFRU
+0x90df114	CalcShouldAIDynamax	ai_util.c	matched to public CFRU
+0x90df3c0	CalcShouldAIUseZMove	ai_util.c	matched to public CFRU
+0x90df7f4	ShouldAIUseZMoveByMoveAndMovePos	ai_util.c	matched to public CFRU
+0x90df824	ShouldAIUseZMove	ai_util.c	matched to public CFRU
+0x90df84c	CanKnockOutWithoutMove	ai_util.c	matched to public CFRU
+0x90df984	CanKnockOutWithFasterMove	ai_util.c	matched to public CFRU
+0x90dfb5c	CanKnockOutAfterHealing	ai_util.c	matched to public CFRU
+0x90dfe00	IsStrongestMove	ai_util.c	matched to public CFRU
+0x90dfe50	Can2HKO	ai_util.c	matched to public CFRU
+0x90dfed4	CanKnockOut	ai_util.c	matched to public CFRU
+0x90dffa0	GoodIdeaToLowerEvasion	ai_util.c	matched to public CFRU
+0x90e0024	GoodIdeaToLowerAccuracy	ai_util.c	matched to public CFRU
+0x90e006c	GoodIdeaToLowerSpeed	ai_util.c	matched to public CFRU
+0x90e00e8	GoodIdeaToLowerSpDef	ai_util.c	matched to public CFRU
+0x90e0160	GoodIdeaToLowerSpAtk	ai_util.c	matched to public CFRU
+0x90e01d8	GoodIdeaToLowerDefense	ai_util.c	matched to public CFRU
+0x90e0250	GoodIdeaToLowerAttack	ai_util.c	matched to public CFRU
+0x90e03c4	UpdateBestDoubleKillingMoveScore	ai_util.c	matched to public CFRU
+0x90e0b78	RemoveDoublesKillingScore	ai_util.c	matched to public CFRU
+0x90e0bac	ForceCompleteDamageRecalculation	ai_util.c	matched to public CFRU
+0x90e0c68	ForceSpecificDamageRecalculation	ai_util.c	matched to public CFRU
+0x90e0d08	TryRemovePartnerDoublesKillingScore	ai_util.c	matched to public CFRU
+0x90e0df4	TryRemovePartnerDoublesKillingScoreComplete	ai_util.c	matched to public CFRU
+0x90e0e24	GetDoubleKillingScore	ai_util.c	matched to public CFRU
+0x90e0edc	StrongestMoveGoesFirst	ai_util.c	matched to public CFRU
+0x90e11fc	MoveKnocksOutPossiblyGoesFirstWithBestAccuracy	ai_util.c	matched to public CFRU
+0x90e137c	AdjustMoveLimitationFlagsForAI	ai_util.c	matched to public CFRU
+0x90e1380	IncreaseViability	ai_util.c	matched to public CFRU
+0x90e1394	DecreaseViability	ai_util.c	read by hand
+0x9351510	PickMoveHumanLikelyToChoose	ai_util.c	matched to public CFRU
+0x9000426	__udivsi3	called_from_ai.c	matched to public CFRU
+0x900042a	sub_900042a	called_from_ai.c	unnamed
+0x900042e	sub_900042e	called_from_ai.c	unnamed
+0x900043c	__umodsi3	called_from_ai.c	matched to public CFRU
+0x900044e	Memset	called_from_ai.c	matched to public CFRU
+0x905bf90	AbilityBattleEffects	called_from_ai.c	read by hand
+0x905f9e4	IsTargetAbilityIgnored	called_from_ai.c	matched to public CFRU
+0x905fa0c	sub_905fa0c	called_from_ai.c	unnamed
+0x905fa9a	IsClearBodyAbility	called_from_ai.c	read by hand
+0x905faa2	sub_905faa2	called_from_ai.c	unnamed
+0x905faaa	IsMoxieAbility	called_from_ai.c	matched to public CFRU
+0x905fad6	sub_905fad6	called_from_ai.c	unnamed
+0x905faea	IsElectricAbsorptionAblity	called_from_ai.c	matched to public CFRU
+0x905fafe	sub_905fafe	called_from_ai.c	unnamed
+0x905fb74	AbilityPreventsLoweringAtk	called_from_ai.c	matched to public CFRU
+0x905fb84	sub_905fb84	called_from_ai.c	unnamed
+0x905fb96	IsAffectedBySturdy	called_from_ai.c	matched to public CFRU
+0x905fbb8	IsAffectedByDisguse	called_from_ai.c	matched to public CFRU
+0x905fc24	IsTrappedByAbility	called_from_ai.c	matched to public CFRU
+0x905ff10	sub_905ff10	called_from_ai.c	unnamed
+0x90601e8	DoesProtectionMoveBlockMove	called_from_ai.c	matched to public CFRU
+0x906036c	AccuracyCalc	called_from_ai.c	matched to public CFRU
+0x9060cec	sub_9060cec	called_from_ai.c	unnamed
+0x906b400	sub_906b400	called_from_ai.c	unnamed
+0x906cad4	sub_906cad4	called_from_ai.c	unnamed
+0x906efc0	PriorityCalc	called_from_ai.c	matched to public CFRU
+0x906f0b8	sub_906f0b8	called_from_ai.c	unnamed
+0x906f140	sub_906f140	called_from_ai.c	unnamed
+0x906f284	SpeedCalc	called_from_ai.c	matched to public CFRU
+0x9071268	sub_9071268	called_from_ai.c	unnamed
+0x9073980	GetBankPartyData	called_from_ai.c	matched to public CFRU
+0x90739b4	sub_90739b4	called_from_ai.c	unnamed
+0x90739f8	GetBaseMaxHP	called_from_ai.c	matched to public CFRU
+0x9073ab0	IsDamageHalvedDueToFullHP	called_from_ai.c	matched to public CFRU
+0x9073b08	sub_9073b08	called_from_ai.c	unnamed
+0x9073b6a	ViableMonCountFromBank	called_from_ai.c	matched to public CFRU
+0x9073b90	sub_9073b90	called_from_ai.c	unnamed
+0x9073ba8	sub_9073ba8	called_from_ai.c	unnamed
+0x9073bb8	CheckRecoil	called_from_ai.c	matched to public CFRU
+0x9073c04	sub_9073c04	called_from_ai.c	unnamed
+0x9073c28	IsOfType	called_from_ai.c	matched to public CFRU
+0x9073df4	StatsMaxed	called_from_ai.c	matched to public CFRU
+0x9073e20	sub_9073e20	called_from_ai.c	unnamed
+0x9073ea4	sub_9073ea4	called_from_ai.c	unnamed
+0x9073f4c	sub_9073f4c	called_from_ai.c	unnamed
+0x9074010	LoadPartyRange	called_from_ai.c	matched to public CFRU
+0x90740dc	HasMonToSwitchTo	called_from_ai.c	matched to public CFRU
+0x9074180	ViableMonCountFromBankLoadPartyRange	called_from_ai.c	matched to public CFRU
+0x907436e	GetMonIdAndSideByMon	called_from_ai.c	matched to public CFRU
+0x90743c0	sub_90743c0	called_from_ai.c	unnamed
+0x90743e8	sub_90743e8	called_from_ai.c	unnamed
+0x90744d8	sub_90744d8	called_from_ai.c	unnamed
+0x90745b4	sub_90745b4	called_from_ai.c	unnamed
+0x907466c	MoveIgnoresSubstitutes	called_from_ai.c	matched to public CFRU
+0x90746a4	MonMoveBlockedBySubstitute	called_from_ai.c	matched to public CFRU
+0x90746d8	sub_90746d8	called_from_ai.c	unnamed
+0x90746e0	sub_90746e0	called_from_ai.c	unnamed
+0x90746f0	IsPlayerInControl	called_from_ai.c	matched to public CFRU
+0x90747d8	CalcMoveSplit	called_from_ai.c	matched to public CFRU
+0x907485c	CalcMoveSplitFromParty	called_from_ai.c	matched to public CFRU
+0x9074898	FindMovePositionInMoveset	called_from_ai.c	matched to public CFRU
+0x90748c0	MoveInMoveset	called_from_ai.c	matched to public CFRU
+0x90748d2	sub_90748d2	called_from_ai.c	unnamed
+0x9074a2c	sub_9074a2c	called_from_ai.c	unnamed
+0x9074a88	sub_9074a88	called_from_ai.c	unnamed
+0x9074ba4	sub_9074ba4	called_from_ai.c	unnamed
+0x9074c28	CanFlinch	called_from_ai.c	matched to public CFRU
+0x9074c3c	IsTrickRoomActive	called_from_ai.c	matched to public CFRU
+0x9074c80	sub_9074c80	called_from_ai.c	unnamed
+0x9074cc4	sub_9074cc4	called_from_ai.c	unnamed
+0x9074cf0	sub_9074cf0	called_from_ai.c	unnamed
+0x9074de4	sub_9074de4	called_from_ai.c	unnamed
+0x9074e56	sub_9074e56	called_from_ai.c	unnamed
+0x9074eb8	sub_9074eb8	called_from_ai.c	unnamed
+0x9074ec6	GetBankItemEffect	called_from_ai.c	matched to public CFRU
+0x9075008	sub_9075008	called_from_ai.c	unnamed
+0x907503c	CheckContact	called_from_ai.c	matched to public CFRU
+0x9075096	sub_9075096	called_from_ai.c	unnamed
+0x90750c4	sub_90750c4	called_from_ai.c	unnamed
+0x90750f0	CheckMoveLimitationsFromParty	called_from_ai.c	matched to public CFRU
+0x90751c8	sub_90751c8	called_from_ai.c	unnamed
+0x9075238	sub_9075238	called_from_ai.c	unnamed
+0x9075264	sub_9075264	called_from_ai.c	unnamed
+0x9075290	sub_9075290	called_from_ai.c	unnamed
+0x90752bc	sub_90752bc	called_from_ai.c	unnamed
+0x907531c	sub_907531c	called_from_ai.c	unnamed
+0x9075378	sub_9075378	called_from_ai.c	unnamed
+0x90753d4	sub_90753d4	called_from_ai.c	unnamed
+0x9075444	sub_9075444	called_from_ai.c	unnamed
+0x90754f0	sub_90754f0	called_from_ai.c	unnamed
+0x9075520	sub_9075520	called_from_ai.c	unnamed
+0x9075550	sub_9075550	called_from_ai.c	unnamed
+0x9075580	IsAbilitySuppressed	called_from_ai.c	read by hand
+0x90755ec	GetAbilityLocation	called_from_ai.c	matched to public CFRU
+0x90757d0	GetBankAbility	called_from_ai.c	read by hand
+0x90757f4	sub_90757f4	called_from_ai.c	unnamed
+0x9075a8c	sub_9075a8c	called_from_ai.c	unnamed
+0x9075b98	MoveBlockedBySubstitute	called_from_ai.c	matched to public CFRU
+0x9075bcc	IsAffectedByPowder	called_from_ai.c	matched to public CFRU
+0x9075f84	CheckMoveLimitations	called_from_ai.c	matched to public CFRU
+0x9076054	CheckGrounding	called_from_ai.c	matched to public CFRU
+0x90760d8	CanBeConfused	called_from_ai.c	read by hand
+0x90762c4	CanBeFrozen	called_from_ai.c	matched to public CFRU
+0x9076320	CanBeBurned	called_from_ai.c	matched to public CFRU
+0x9076354	CanBeParalyzed	called_from_ai.c	matched to public CFRU
+0x9076380	CanBePoisoned	called_from_ai.c	read by hand
+0x90763c6	sub_90763c6	called_from_ai.c	unnamed
+0x9076408	CanBePutToSleep	called_from_ai.c	read by hand
+0x907645c	GetBaseMoveTarget	called_from_ai.c	matched to public CFRU
+0x907659c	sub_907659c	called_from_ai.c	unnamed
+0x90765b2	sub_90765b2	called_from_ai.c	unnamed
+0x9076620	sub_9076620	called_from_ai.c	unnamed
+0x9076636	sub_9076636	called_from_ai.c	unnamed
+0x9076642	sub_9076642	called_from_ai.c	unnamed
+0x9076728	sub_9076728	called_from_ai.c	unnamed
+0x9076730	IsChoiceItemEffectOrAbility	called_from_ai.c	matched to public CFRU
+0x9076748	CanBeChoiceLocked	called_from_ai.c	matched to public CFRU
+0x9079808	GetMonAbility	called_from_ai.c	matched to public CFRU
+0x908367c	sub_908367c	called_from_ai.c	unnamed
+0x90836a2	GetMoveTypeSpecial	called_from_ai.c	matched to public CFRU
+0x90838a4	AI_SpecialTypeCalc	called_from_ai.c	matched to public CFRU
+0x9083abc	AI_TypeCalc	called_from_ai.c	matched to public CFRU
+0x9083c94	sub_9083c94	called_from_ai.c	unnamed
+0x9083eac	TryAdjustDamageForRaidBoss	called_from_ai.c	matched to public CFRU
+0x9083f18	PopulateDamageCalcStructWithBaseAttackerData	called_from_ai.c	matched to public CFRU
+0x90840ec	PopulateDamageCalcStructWithBaseDefenderData	called_from_ai.c	matched to public CFRU
+0x9084288	sub_9084288	called_from_ai.c	unnamed
+0x9085196	CountAliveMonsInBattle	called_from_ai.c	matched to public CFRU
+0x90858f8	CalcVisualBasePower	called_from_ai.c	matched to public CFRU
+0x9086b40	sub_9086b40	called_from_ai.c	unnamed
+0x9086dd8	sub_9086dd8	called_from_ai.c	unnamed
+0x9087080	AI_CalcDmg	called_from_ai.c	matched to public CFRU
+0x908d4ec	CanDynamax	called_from_ai.c	matched to public CFRU
+0x908d7bc	IsDynamaxed	called_from_ai.c	matched to public CFRU
+0x908d864	sub_908d864	called_from_ai.c	unnamed
+0x908d8f0	sub_908d8f0	called_from_ai.c	unnamed
+0x908d93c	MoveInMonMovesetThatCanChangeByGigantamaxing	called_from_ai.c	matched to public CFRU
+0x908da20	IsAnyMaxMove	called_from_ai.c	matched to public CFRU
+0x908dd0c	sub_908dd0c	called_from_ai.c	unnamed
+0x908dd40	sub_908dd40	called_from_ai.c	unnamed
+0x908dd74	IsMaxMoveWithStatusEffect	called_from_ai.c	matched to public CFRU
+0x908ddb4	sub_908ddb4	called_from_ai.c	unnamed
+0x908de14	IsMaxMoveWithEffect	called_from_ai.c	read by hand
+0x908e0a8	IsRaidBattle	called_from_ai.c	matched to public CFRU
+0x908eca8	GetMaxMoveByMove	called_from_ai.c	matched to public CFRU
+0x908ed8c	GetMaxMove	called_from_ai.c	matched to public CFRU
+0x908edd0	sub_908edd0	called_from_ai.c	unnamed
+0x908ee64	sub_908ee64	called_from_ai.c	unnamed
+0x908ef3c	sub_908ef3c	called_from_ai.c	unnamed
+0x908f1b0	IsRaidBossUsingRegularMove	called_from_ai.c	matched to public CFRU
+0x9090d00	GetBadDreamsDamage	called_from_ai.c	matched to public CFRU
+0x9090d34	GetPoisonDamage	called_from_ai.c	matched to public CFRU
+0x9090dac	sub_9090dac	called_from_ai.c	unnamed
+0x9090df8	sub_9090df8	called_from_ai.c	unnamed
+0x9090e6c	sub_9090e6c	called_from_ai.c	unnamed
+0x9090f80	GetSeaOfFireDamage	called_from_ai.c	matched to public CFRU
+0x9090fba	sub_9090fba	called_from_ai.c	unnamed
+0x9091008	GetGMaxVineLashDamage	called_from_ai.c	matched to public CFRU
+0x9091036	GetGMaxWildfireDamage	called_from_ai.c	matched to public CFRU
+0x9091064	GetGMaxCannonadeDamage	called_from_ai.c	matched to public CFRU
+0x9091092	sub_9091092	called_from_ai.c	unnamed
+0x909a418	sub_909a418	called_from_ai.c	unnamed
+0x909a830	sub_909a830	called_from_ai.c	unnamed
+0x909a9de	sub_909a9de	called_from_ai.c	unnamed
+0x909aa18	sub_909aa18	called_from_ai.c	unnamed
+0x909ad90	sub_909ad90	called_from_ai.c	unnamed
+0x909add4	IsMegaZMoveBannedBattle	called_from_ai.c	matched to public CFRU
+0x90a0104	sub_90a0104	called_from_ai.c	unnamed
+0x90a0ee0	SandstormHurts	called_from_ai.c	matched to public CFRU
+0x90a0f2e	sub_90a0f2e	called_from_ai.c	unnamed
+0x90a0f60	HailHurts	called_from_ai.c	matched to public CFRU
+0x90a0f92	sub_90a0f92	called_from_ai.c	unnamed
+0x90a0fc8	sub_90a0fc8	called_from_ai.c	unnamed
+0x90a3700	sub_90a3700	called_from_ai.c	unnamed
+0x90a404c	sub_90a404c	called_from_ai.c	unnamed
+0x90a46c0	sub_90a46c0	called_from_ai.c	unnamed
+0x90a5268	ItemId_GetHoldEffectParam	called_from_ai.c	matched to public CFRU
+0x90a52b6	IsTypeZCrystal	called_from_ai.c	matched to public CFRU
+0x90a52de	sub_90a52de	called_from_ai.c	unnamed
+0x90a52f4	sub_90a52f4	called_from_ai.c	unnamed
+0x90a9430	sub_90a9430	called_from_ai.c	unnamed
+0x90a9534	sub_90a9534	called_from_ai.c	unnamed
+0x90a9554	sub_90a9554	called_from_ai.c	unnamed
+0x90a9704	GetBankMegaFormAbility	called_from_ai.c	matched to public CFRU
+0x90a9764	sub_90a9764	called_from_ai.c	unnamed
+0x90a97fc	sub_90a97fc	called_from_ai.c	unnamed
+0x90a9830	sub_90a9830	called_from_ai.c	unnamed
+0x90a9840	sub_90a9840	called_from_ai.c	unnamed
+0x90a985c	sub_90a985c	called_from_ai.c	unnamed
+0x90a988e	sub_90a988e	called_from_ai.c	unnamed
+0x90ad614	sub_90ad614	called_from_ai.c	unnamed
+0x90ad634	BankSideHasTwoTrainers	called_from_ai.c	matched to public CFRU
+0x90bd77c	sub_90bd77c	called_from_ai.c	unnamed
+0x90bd7d0	sub_90bd7d0	called_from_ai.c	unnamed
+0x90bd8ec	ReplaceWithZMoveRuntime	called_from_ai.c	matched to public CFRU
+0x90becd0	sub_90becd0	called_from_ai.c	unnamed
+0x90bff90	sub_90bff90	called_from_ai.c	unnamed
+0x90c0094	sub_90c0094	called_from_ai.c	unnamed
+0x90c0c1e	sub_90c0c1e	called_from_ai.c	unnamed
+0x90c0c78	GetMonEntryHazardDamage	called_from_ai.c	matched to public CFRU
+0x90c0cf4	sub_90c0cf4	called_from_ai.c	unnamed
+0x90c1850	MathMax	called_from_ai.c	read by hand
+0x90c1858	MathMin	called_from_ai.c	matched to public CFRU
+0x90c1884	CheckTableForMove	called_from_ai.c	read by hand
+0x90c1a10	CheckTableForMovesEffect	called_from_ai.c	matched to public CFRU
+0x90c1a38	CheckTableForAbility	called_from_ai.c	read by hand
+0x90c1a54	sub_90c1a54	called_from_ai.c	unnamed
+0x90c1c9c	sub_90c1c9c	called_from_ai.c	unnamed
+0x90c1df8	sub_90c1df8	called_from_ai.c	unnamed
+0x90c1ed2	sub_90c1ed2	called_from_ai.c	unnamed

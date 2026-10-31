@@ -1,0 +1,25 @@
+--- absorb: foe has Thunderbolt, bench Jolteon
+predicted Thunderbolt, AI can not KO: 30/40 = 75%
+... AI weak so foe might KO: 28/40 = 70%
+... foe only predicted status: 0/40 = 0%
+... AI can KO foe first: 0/40 = 0%
+no absorber on bench: 33/40 = 82%
+--- natural cure / regenerator (bench wall)
+Nat Cure asleep: 32/40 = 80%
+Nat Cure toxic hp 66%: 27/40 = 67%
+Nat Cure burn hp 66%: 29/40 = 72%
+Nat Cure para hp 40%: 0/40 = 0%
+Regenerator hp 66%: 30/40 = 75%
+Regenerator hp 40% foe harmless: 0/40 = 0%
+Regenerator hp 40% foe KO: 32/40 = 80%
+Regenerator hp 40% foe 2HKO: 30/40 = 75%
+--- yawn
+Yawn 0x800: 0/40 = 0%
+Yawn 0x1000: 0/40 = 0%
+Yawn 0x1800: 0/40 = 0%
+--- save sweeper
+AI slower, bench fast KO survives: 32/40 = 80%
+AI faster, bench fast KO survives: 27/40 = 67%
+foe harmless, AI cannot KO, bench fast KO: 33/40 = 82%
+foe harmless, AI 2HKOs, bench fast KO: 33/40 = 82%
+foe harmless, AI cannot KO, bench wall: 0/40 = 0%

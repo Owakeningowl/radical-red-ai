@@ -1,0 +1,27 @@
+from lab import *
+L = Lab(); b = L.b
+FW = dict(moves=['Tackle', 'Pound', 'Scratch', 'Slash'], atk=30, spa=30, hp=300, maxhp=300, spe=50)
+ATK = ['Flamethrower', 'Psychic', 'Ice Beam', 'Tackle']
+AIW = dict(moves=ATK, hp=300, maxhp=300, atk=60, spa=60, spe=100)
+base = dict(moves=['Tackle', 'Pound', 'Scratch', 'Slash'], dfn=200, spd=200, spe=100, atk=30, spa=30)
+glass = dict(species=143, moves=['Tackle', 'Pound', 'Scratch', 'Slash'], dfn=5, spd=5, spe=20, hp=30, atk=30, spa=30)
+sweep = dict(species=143, moves=['Earthquake', 'Pound', 'Scratch', 'Slash'], dfn=300, spd=300, spe=300, hp=300, atk=900, spa=30)
+wall = dict(species=143, moves=['Tackle', 'Pound', 'Scratch', 'Slash'], dfn=900, spd=900, spe=20, hp=300, atk=30, spa=30)
+def R(t, ai, foe, n=40):
+    b.w16(0x2023D98, mv(foe['moves'][0]))
+    r = L.rate(ai, foe, n)
+    s = sum(v for k, v in r.items() if k != 'stay')
+    print(f'{t}: {s}/{n} = {100*s//n}%'); sys.stdout.flush()
+TB = dict(FW, moves=['Thunderbolt', 'Pound', 'Scratch', 'Tackle'], spa=40)
+FT = dict(FW, moves=['Flamethrower', 'Pound', 'Scratch', 'Tackle'], spa=40)
+FSt = dict(FW, moves=['Flamethrower', 'Growl', 'Leer', 'Toxic'], spa=40)
+L.bench(dict(base, species=135, hp=300, maxhp=300), glass); R('weak T-bolt, Jolteon full HP', AIW, TB)
+L.bench(dict(base, species=135, hp=150, maxhp=300), glass); R('weak T-bolt, Jolteon hurt', AIW, TB)
+L.bench(dict(base, species=136, hp=300, maxhp=300), glass); R('weak Flamethrower, Flareon full HP', AIW, FT)
+L.bench(dict(base, species=136, hp=300, maxhp=300), glass); R('same, your style not an attacker', AIW, FSt)
+L.bench(dict(base, species=136, hp=300, maxhp=300), glass); R('same, AI slower and can KO you', dict(AIW, spe=30, spa=900), FT)
+L.bench(dict(base, species=136, hp=300, maxhp=300), glass); R('same, AI faster and can KO you', dict(AIW, spa=900), FT)
+L.bench(dict(base, species=136, hp=300, maxhp=300), glass); R('same, AI +2 boost', dict(AIW, stages={4: 8}), FT)
+L.bench(dict(base, species=135, hp=300, maxhp=300), glass); R('strong T-bolt 2HKO, Jolteon full', AIW, dict(TB, spa=500))
+L.bench(dict(base, species=136, hp=300, maxhp=300), glass); R('Flareon but T-bolt predicted', AIW, TB)
+L.quit()
