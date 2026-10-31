@@ -2,7 +2,7 @@
 
 The AI of Pokemon Radical Red 4.1, worked out from the ROM.
 
-- `doc/index.html`: the plain English guide. `doc/doc.txt` is its text.
+- **[Read the guide](https://owakeningowl.github.io/radical-red-ai/)**: the plain English guide. `docs/doc.txt` is its text.
 - `source/`: the full AI as decompiled C, 507 functions. Start with `source/README.md`.
 - `notes/`: raw results from running the real AI in real battles.
 - `tools/` and `tests/`: the scripts used to decompile, compare and test.
