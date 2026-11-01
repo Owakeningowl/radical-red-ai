@@ -387,7 +387,7 @@ When the AI needs a back Pokemon, after a KO or for a hard switch, it scores eac
     +2: It can't KO you but does at least half your HP
     +17: It resists you (see "What counts as resists you")
     +2: It walls you (only if it doesn't resist you, and you can 3HKO but not 2HKO it)
-    -1: One of your moves would 2HKO it
+    -1: One of your moves would 2HKO it (in doubles: one of your moves is super effective on it)
     -39: It is slower and you would KO it (the score can't go below 0)
     -15: It is faster, you would KO it, and it can't KO you (can't go below 0)
     -1: It is faster, you would KO it, and it can KO you
