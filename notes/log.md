@@ -68,3 +68,7 @@ Doubles target: no slot bias, no super effective bonus. Attacking styles: KO 100
 Doubles switching: needs weak attacks vs BOTH foes plus same back mon rules (faster 83, walls/resists 75 if you can 3HKO); you KO or 2HKO = 0. Post KO in doubles: scores ADD over both foes, faint only -1 (W1-W5 live, read incoming from bs+92+1). Old doc line "type matchups instead of damage" is wrong.
 Prediction ties: when your attacks tie for damage, the AI picks what a human would: useful side effect, then your last move that landed on it, then super effective over not, then STAB, then base power, then random (PickMoveHumanLikelyToChoose 0x9351510). Doc says random: fix. playerSwitchedCount affects Pursuit.
 Also pending: readable patched source in rr41/src (not started beyond measuring: 267 paired, 97 identical).
+
+## 2026-10-31 "resists you" (t55 singles, t56 doubles)
+Singles: damage based (none of your moves 3HKO it, after hazards, Wish, Leftovers-type healing, Multiscale, Disguise). Bulky Normal type beat frail Water type vs Fire moves, 38 of 38 switches.
+Doubles with 2+ of your Pokemon alive (ViableMonCountFromBank(foe) != 1): type based only (AI_TypeCalc). Frail Water type beat bulky Normal, 33 of 33. No faint penalty in that path. Old W1-W5 claim (62 vs 45) was explained wrong: D won on the type path for another reason, so the doc no longer cites it.
