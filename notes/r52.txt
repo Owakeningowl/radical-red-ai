@@ -1,0 +1,31 @@
+E1 Earthquake normal partner | style 11 | {'Psychic>L': 9, 'Psychic>R': 16, 'Thunderbolt>L': 5, 'Thunderbolt>R': 10} | dmg [93, 111]
+E2 Earthquake Flying partner | style 11 | {'Psychic>L': 8, 'Psychic>R': 10, 'Thunderbolt>L': 14, 'Thunderbolt>R': 8} | dmg [93, 111]
+E3 Earthquake, partner fainted | style 11 | {'Psychic>L': 9, 'Psychic>R': 7, 'Thunderbolt>L': 13, 'Thunderbolt>R': 11} | dmg [93, 111]
+E4 Surf normal partner | style 11 | {'Psychic>L': 8, 'Psychic>R': 9, 'Thunderbolt>L': 9, 'Thunderbolt>R': 14} | dmg [83, 111]
+E5 Surf, partner Water Absorb | style 11 | {'Psychic>L': 10, 'Psychic>R': 14, 'Thunderbolt>L': 12, 'Thunderbolt>R': 4} | dmg [83, 111]
+E6 Phazer, super effective KOs L only | style 16 | {'Thunderbolt>L': 51, 'Thunderbolt>R': 49} | dmg None
+E7 Team Support, super effective KOs L only | style 18 | {'Tailwind>1': 100} | dmg None
+doubles switching
+row nothing faster walls resists resKO slowKO fastKO
+weak vs both, you harmless |   0  83   0   0   0   0  66
+weak vs both, you 3HKO |   0  79  79  70  75   0  83
+weak vs L only, strong on R, you 3HKO |   0   0   0   0   0   0   0
+you KO, AI strong, AI slower |   0   0   0   0   0   0   0
+you 2HKO, AI strong, AI slower |   0   0   0   0   0   0   0
+you harmless, AI strong |   0   0   0   0   0   0   0
+doubles who comes in
+W1 idx2 KO L+faster than L vs idx3 faster+resists both {2: 18}
+W2 same, order swapped {3: 18}
+DONE
+E1 Earthquake 1/3+ both, normal partner | style 11 | {'Earthquake>L': 18, 'Earthquake>R': 22} | dmg [123, 111]
+E2 same, Flying partner | style 11 | {'Earthquake>L': 17, 'Earthquake>R': 23} | dmg [123, 111]
+E3 Earthquake KOs both, normal partner | style 11 | {'Earthquake>L': 16, 'Earthquake>R': 24} | dmg [123, 111]
+E4 Surf 1/3+ both, normal partner, T-bolt stronger | style 11 | {'Surf>L': 21, 'Surf>R': 19} | dmg [111, 148]
+E5 Earthquake would KO frail partner | style 11 | {'Earthquake>L': 15, 'Earthquake>R': 25} | dmg [123, 111]
+DONE
+W1 [A,D] (A idx2, D idx3) {(2, 6): 13}
+W2 [D,A] (D idx2, A idx3) {(3, 6): 12}
+W3 [N,D] N useless, D good {(2, 6): 8}
+W4 [D,N] {(3, 6): 11}
+W5 [K,D] K KO L, slow, frail; D faster+resists both {(2, 6): 15}
+DONE

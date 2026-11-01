@@ -1,0 +1,20 @@
+D1 spread 1/3+ on both vs single KO on L | style 11 | {'Heat Wave>L': 60} | dmg [117, 148]
+D2 spread 1/4 to 1/3 on both vs single | style 11 | {'Psychic>L': 17, 'Psychic>R': 15, 'Thunderbolt>L': 18, 'Thunderbolt>R': 10} | dmg [93, 119]
+D3 spread under 1/4 on both vs single | style 11 | {'Psychic>L': 2, 'Psychic>R': 3, 'SWITCH': 47, 'Thunderbolt>L': 5, 'Thunderbolt>R': 3} | dmg [58, 75]
+D4 spread 1/3+ on both, no KOs | style 11 | {'Heat Wave>L': 60} | dmg [117, 148]
+D5 Earthquake hits healthy partner | style 11 | {'Psychic>L': 17, 'Psychic>R': 14, 'Thunderbolt>L': 12, 'Thunderbolt>R': 17} | dmg None
+D6 Earthquake, Flying partner | style 11 | {'Psychic>L': 16, 'Psychic>R': 16, 'Thunderbolt>L': 14, 'Thunderbolt>R': 14} | dmg None
+D7 partner already KOing L with its move | style 11 | {'Flamethrower>R': 12, 'Psychic>R': 31, 'Thunderbolt>R': 17} | dmg None
+D7b same with no partner move | style 11 | {'Flamethrower>L': 6, 'Flamethrower>R': 10, 'Psychic>L': 11, 'Psychic>R': 14, 'Thunderbolt>L': 13, 'Thunderbolt>R': 6} | dmg None
+D8 both KOable, only R can KO AI | style 11 | {'Thunderbolt>R': 60} | dmg None
+D9 both KOable, both can KO AI | style 11 | {'Thunderbolt>L': 57, 'Thunderbolt>R': 43} | dmg None
+D10 Phazer style, super effective KOs L only | style 16 | {'Growl>L': 100} | dmg None
+--- doubles switching
+S1 weak vs both, useless back mon switch 0 of 60
+S2 weak vs L only, strong on R switch 0 of 60
+S3 foe can KO AI, AI strong, useless back mon switch 0 of 60
+S4 foe can KO AI, AI strong, resist back mon switch 0 of 60
+S5 foe 2HKOs AI, AI strong, resist back mon switch 0 of 60
+--- doubles who comes in
+W1 idx2=KO L+faster than L, idx3=faster+resists both {6: 22}
+DONE

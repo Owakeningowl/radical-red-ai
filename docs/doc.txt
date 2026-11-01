@@ -1,64 +1,96 @@
-#! Pokemon Radical Red (v4.1) AI document
+#! Radical Red 4.1 AI: Nuzlocke Guide
+
+This guide tells you what the AI will do on any turn: what it clicks, when it hard switches, what it sends in after a KO, and how double battles work. Everything comes from the v4.1 ROM, and most of it was tested by running the real AI in real battles on a Hardcore save. The last section says what was only read and not tested.
 
 Radical Red is made by soupercell. Its AI is built on Skeli789's CFRU AI, with changes.
 
-This document is intended to help you understand what the AI will do on a given turn. Everything here was read from the v4.1 ROM and the code it is built on. The scores and switch rates were then tested by running the real AI in real battles. "Extra details" and the last section say what was only read and not tested.
+# Read this first:
 
-# Brief summary about Radical Red AI:
+1. The AI gives every move a score and clicks the highest. Ties are random. Every trainer uses the same AI, in every mode.
 
-The AI gives each of its moves a score and clicks the highest one. If moves tie, it picks randomly between them. Every trainer uses this same AI. The ROM forces it for all trainer battles, so no trainer is "dumber" than another.
+2. It knows everything about your Pokemon that is out: all 4 moves, ability, item, stats, EVs and HP.
 
-It works differently from most hacks in three ways. If you learn these three things, you can predict most turns.
+3. Before it picks, it guesses your move by scoring your moves with its own rules. See "How it guesses your move".
 
-1. The AI guesses your move. It scores YOUR moves with its own rules, and it plays around the move that scores highest. See "How the AI predicts you".
+4. A kill is worth +9. Its strongest normal attack is only +2. So a status or setup move worth +3 or more gets clicked first, unless it has a kill.
 
-2. The AI gives each of its Pokemon a style, based only on its 4 moves. The style decides how much status and setup moves are worth. A Pokemon with 4 attacks never uses status. See "Styles".
+5. A Pokemon with 4 attacks, a Choice item or an Assault Vest almost never uses status. It clicks its kill, or else its strongest attack.
 
-3. The AI switches a lot. A switch check runs on 75% of turns. If a rule says "always", that means 75% in practice. See "Switch AI".
+6. The AI decides whether to switch before it picks a move. When a switch rule fires, it switches 75% of the time. It rolls again every turn.
 
-The AI knows everything about the Pokemon you have out: all 4 moves, ability, item, stats, EVs and HP. It also uses your back Pokemon for a few checks, such as how many you have left and how fast they are.
+7. It only hard switches into a back Pokemon that does something against you. If nothing in its back is useful against you, it never hard switches.
 
-When the AI works out damage, it always uses a 93% damage roll. That is close to the middle roll. Your Pokemon counts as KOed only if the move kills at that 93% roll. So if you survive the 93% roll, the AI does not see a kill, even if a high roll would kill you.
+8. After a KO, it sends in the back Pokemon with the highest score. You can work that out before the KO. See "Who comes in after a KO".
 
-Speed ties: for its active Pokemon, the AI treats a speed tie as being slower. For a Pokemon on its bench, a tie counts as being faster.
+9. In Hardcore, switching back to the Pokemon you had out two switches ago gets punished every time. See "Hardcore anti-switch rule".
 
-The AI normally can't change its move after it picks. But in Hardcore mode it can re-pick after you switch, in two situations. See "Hardcore mode".
+10. The AI only counts a KO at a 93% damage roll. A high roll can still kill you even when the AI doesn't "see" the kill, so calc the high roll yourself.
 
-# Common scores to be aware of:
+# Every turn, step by step:
 
-There is no max score. Every move starts at 0, the AI adds up its rules, and it clicks the highest total. A score only matters compared to the AI's other moves. (Inside the game, moves start at 100. This document shows the change from 100.)
+    1. Can it switch at all? Check "Can it switch at all".
+    2. Will it switch? Find what it sees in "When does it hard switch". If a rule fires, 75%.
+    3. If it stays, does it have a kill? A fast kill is +9.
+    4. Does it have a status or setup move worth more than its kill or its +2? Check its style in the status table.
+    5. If not, it clicks its strongest attack.
+    6. If two moves tie, it picks one at random.
 
-    Reflect, Light Screen (Pokemon with a screen style):       +15
-    Taunt, you have status moves to stop:                      +8 to +15
-    Sleep Talk, Snore while asleep:                            +10
-    Fast kill (AI kills and moves first):                      +9
-    Priority kill (AI kills first using a priority move):      +9
-    Last stand (you are about to KO the AI and it can hit first):    +9
-    U-turn, Volt Switch, Flip Turn when the AI wants out:      +9
-    Sleep move, Yawn:                                          +6 to +9
-    Slow kill (AI kills but moves second):                     +8 (most styles)
-    Fake Out on its first turn out:                            +8
-    Recovery when it would save the AI:                        +8 at most
-    Substitute:                                                +3 to +8
-    Stealth Rock:                                              +4 to +7
-    Toxic:                                                     +3 to +5
-    Setup move, when it is safe:                               +3 to +6
-    Highest damaging move:                                     +2
-    Other attacks:                                             0
-    Thunder Wave when the AI is already faster:                -2 to +3
-    Baton Pass with no boosts:                                 -6
-    U-turn when the AI wants to stay in:                       -9
-    Move that would do nothing:                                -10
-    Attack your ability would absorb (Volt Absorb and so on):  -20
-    Attack that can't hit you because of type:                 never clicked
+> Speed ties: for its Pokemon on the field, the AI treats a tie as being slower than you. For a Pokemon in its back, a tie counts as faster.
 
-Note: The big thing to know is that a normal best attack is only +2. So a status move on +3 or more gets picked over it, unless the AI has a kill.
+# Score cheat sheet:
 
-Note: An Attacker style scores nearly all status moves at 0, so the status ranges above don't apply to it.
+Every move starts at 0, the AI adds up its rules, and it clicks the highest total. Inside the game moves start at 100, and this guide shows the change from 100.
 
-Note: If two attacks do exactly the same damage, the +2 goes to one of them at random.
+|What|Singles|Doubles
+|Highest possible|+18|+31
+|Highest you will normally see|+15|+19
+|A kill|+9|+11
+|Strongest attack, no kill|+2|+10
+|Every other attack|0|0
+|Lowest on a move it can still use|-20|-40
+|Lowest possible|-100|-100
 
-# Styles:
+Doubles numbers are for an All-Out Attacker. Other styles are in the doubles section.
+
+    Highest singles, +18:  Fell Stinger or a Z-Move that KOs you and goes first. Tested.
+    Highest doubles, +31:  a Pledge move when its partner also has a Pledge move (+20), plus a KO. Read from the code, not tested.
+    Lowest, -100:  a move it can't use at all (no PP, Disabled, a status move while Taunted, a move Encore blocks, Heal Block, Throat Chop, Gravity). It stays at -100.
+    In doubles every penalty counts double, so -20 becomes -40.
+    The game caps scores at +155, but nothing gets near it.
+
+## Common scores, highest to lowest:
+
+    +18: Fell Stinger or a Z-Move that KOs you and goes first (rare)
+    +15: Reflect or Light Screen on a Screens style
+    +8 to +15: Taunt, when you have status moves
+    +10: Sleep Talk or Snore while asleep
+    +9: Fast kill (KOs you and moves first, priority counts)
+    +9: Last stand (you are about to KO it, and it can hit first)
+    +9: U-turn, Volt Switch, Flip Turn when it wants out
+    +6 to +9: Sleep moves and Yawn
+    +3 to +9: Slow kill (KOs you but moves second), depends on style
+    +8: Fake Out on its first turn out
+    +8: Recovery that saves it, at most
+    +3 to +8: Substitute
+    +4 to +7: Stealth Rock
+    +3 to +6: Setup move, when it is safe
+    +3 to +5: Toxic
+    +3: Knock Off when you hold an item and it can't KO you
+    +2: Its strongest attack
+    0: Every other attack
+    -2: Thunder Wave when its team is already faster
+    -6: Baton Pass with no boosts
+    -9: U-turn when it wants to stay in
+    -10: A move that would do nothing (status on an immune or statused target, setup at +6, recovery at full HP)
+    -15: An attack that can't hit you because of your type
+    -20: An attack your ability absorbs (Volt Absorb, Flash Fire and so on)
+    -100: A move it can't use at all
+
+> The big one: its best attack is only +2. A status move on +3 or more beats it every time, unless the AI has a kill. And Taunt or Reflect on the right style (+15) beats even a kill.
+
+# What move will it click:
+
+## Styles:
 
 The AI looks at the 4 moves of its Pokemon and gives it one style. Use the first line that fits. The style is worked out again each turn, so a hazard being maxed out can change it.
 
@@ -78,39 +110,18 @@ The AI looks at the 4 moves of its Pokemon and gives it one style. Use the first
     2 attacks and any other status move:       Status
     Anything else (0 or 1 attacks):            Stall
 
-Moves that hit and also do something still count as attacks here. In testing, Power-Up Punch also counted as a boosting move. Only one screen move is needed in this game.
-
-An Attacker scores almost every status move at 0, so it just attacks. The others score status moves highly, so they usually click status first and attack later, unless they have a kill.
-
-# How the AI predicts you:
-
-Before it picks anything, the AI scores your 4 moves using the same rules in this document, as if your Pokemon were an AI Pokemon. Your highest scoring move is its prediction. If your top moves tie, it picks one at random.
-
-If every move you have scores below 0, it predicts that you will switch.
-
-This means the prediction is often right, but it does not read your input. You can use it against the AI:
-
-    If it thinks you will switch, it gives up its fast kill and slow kill bonuses.
-    It Protects, heals and switches based on the move it predicts, so you can exploit that move.
-    Sucker Punch needs it to predict an attack. If you have status moves, it only considers Sucker Punch half the time.
-
-# Damaging moves:
+Moves that hit and also do something still count as attacks here. In testing, Power-Up Punch also counted as a boosting move. One screen move is enough for Screens.
 
 ## Kills:
 
-If the AI has a move that kills you and moves first:
+If the AI has a move that KOs you and moves first:
     Fast kill:                                         +9
 
-When more than one move kills, only the most accurate ones get this. So Rock Slide gets +9 and Stone Edge gets 0, if both kill.
-If it only has a less accurate kill, that one still gets +9.
-Priority counts as moving first.
+When more than one move kills, only the most accurate ones get this. So Rock Slide gets +9 and Stone Edge gets 0, if both kill. If it only has a less accurate kill, that one still gets +9. Priority counts as moving first.
 
-If the AI's move kills you but moves second, it gets a slow kill score based on its style. It does not get this if it knows Protect, or if you are about to faint to end of turn damage or are likely unable to move (unless you are predicted to heal, or it has Moxie).
+If its kill moves second, it gets a slow kill score based on its style. It does not get this if it knows Protect, or if you are about to faint to end of turn damage or are likely unable to move (unless you are predicted to heal, or it has Moxie).
 
-    Attacker:                          +8
-    Status:                            +8
-    Stall:                             +8
-    Phazer:                            +8
+    Attacker, Status, Stall, Phazer:   +8
     Cleric, you can 2HKO the AI:       +7
     Cleric, you can't:                 +6
     Setup:                             +6
@@ -125,46 +136,21 @@ If this is your last Pokemon and you can 2HKO the AI: Stall, Baton Pass, Cleric,
 
 ## Last stand:
 
-If your predicted move KOs the AI, then its strongest move that still goes first gets:
+If your predicted move KOs the AI, its strongest move that still goes first gets:
     +9
 
-This is how the AI uses priority when it is about to die. It also fires when the AI is simply faster, on its strongest attack.
+This is how the AI uses priority when it is about to die. It also fires when the AI is simply faster, on its strongest attack. It does not fire if the AI knows Protect, or for Phazer or Stall styles, unless the move is priority and the AI is otherwise slower. Hazards style only does it 50% of the time, unless it has no hazards left to set. It won't fire if the AI has Fake Out and Fake Out is usable.
 
-It does not fire if the AI knows Protect, or for Phazer or Stall styles, unless the move is priority and the AI is otherwise slower.
-Hazards style only does it 50% of the time, unless it has no hazards left to set.
-It won't fire if the AI has Fake Out and Fake Out is usable.
+## Strongest attack:
 
-## Highest damaging move:
-
-The AI's highest damaging move gets:
+Its strongest attack gets:
     +2
 
-Only the single strongest attack gets this. Every other attack stays at 0, no matter how close its damage is.
+Only the single strongest attack gets this. Every other attack stays at 0, however close its damage is. If two attacks do exactly the same damage, the +2 goes to one of them at random.
 
-Attacks with side effects can add to this if the effect is useful and very likely:
+## Status move scores by style:
 
-    Burn, poison, paralysis or freeze hit, with at least 75% chance:   same as the matching status move
-    Flame Charge, Power-Up Punch, other sure self boosts:              same as a boost move
-    Knock Off when you hold an item and the AI can't kill you:         +3
-    Brick Break when you have screens:                                 +3
-    Pursuit when it predicts you will switch:                          +3
-    Feint when it predicts Protect:                                    +3
-    Smack Down when you aren't grounded:                               +3
-
-## Penalties on attacks:
-
-    Attack that can't hit you because of type:                 never clicked
-    Your ability absorbs it (Volt Absorb, Flash Fire and so on):    -20
-    Blocked by Soundproof, Bulletproof, Queenly Majesty:       -10
-    Priority in Psychic Terrain on a grounded target:          -10
-    High Jump Kick style moves under 70% accuracy:             -6
-    Hyper Beam style moves when another move also kills:       -9
-    Explosion style moves when another move also kills:        -4
-    Sucker Punch when it thinks you won't attack:              -9
-
-# Status moves by style:
-
-These are the scores from testing. Each column is a style from the "Styles" section. Numbers marked * are only given if you can't 2HKO the AI.
+These are the scores from testing. Each column is a style. Numbers marked * are only given if you can't 2HKO the AI.
 
 |Move|Attacker|Setup|Status|Stall|Baton|Cleric|Screens|Phazer|Hazards
 |Toxic, poison, confusion|0|4*|5|4|0|4|3|5|3
@@ -187,241 +173,145 @@ These are the scores from testing. Each column is a style from the "Styles" sect
 
 A "-" means that move would change the Pokemon's style. For example, adding a boost to 3 attacks makes it Setup, not Status.
 
-Thunder Wave: the AI takes off 2 whenever its team's average speed is higher than your team's average speed. That counts both whole teams, not just the Pokemon out.
+The rules behind each move (when it sets up, heals, uses sleep and so on) are in "Full rule details" at the end.
 
-Rain Dance and Sunny Day: the game checks whether the weather would help, but the move itself counts as a Water or Fire move, so that check always passes.
+## How it guesses your move:
 
-## When the AI sets up:
+Before it picks anything, the AI scores your 4 moves with the same rules, as if your Pokemon were an AI Pokemon. Your highest scoring move is its guess. If your top moves tie, it picks one at random. If every move you have scores below 0, it guesses that you will switch.
 
-    If the AI moves first, it sets up unless you can KO it.
-    If the AI moves second, it sets up unless you can 2HKO it.
-    It stops at +3. A Swords Dance scores +5 at +0, +1 and +2, then 0 at +3 and above.
-    It won't use a boost against Unaware, unless the AI has Stored Power or Power Trip.
-    It won't use a boost if you have used a move that would undo it, like Haze or Roar, or when it predicts one.
-    Attack boosts need a physical move, Sp. Atk boosts need a special move. Otherwise it gets -10.
-    Speed boosts only count if the AI isn't already faster than your whole team.
-    Choice locked or Encored: -10.
+When two of your attacks would both KO, or do the same damage, it guesses the one a person would click. It checks these in order: better accuracy, no recoil, no stat drop, a useful side effect, the move you last hit it with, super effective, STAB, higher base power, then random.
 
-## When the AI heals:
+It doesn't read your input, so you can use the guess against it:
 
-If the AI moves first:
-    You can KO it, and healing would stop that:  recovery score
-    You can 2HKO it, and the heal is more than its current HP:  recovery score (50%), no score change other 50%
+    If it thinks you will switch, it gives up its fast kill and slow kill bonuses.
+    It Protects, heals and switches based on the move it guesses.
+    Sucker Punch needs it to guess an attack. If you have status moves, it only considers Sucker Punch half the time.
 
-If the AI moves second:
-    You can 2HKO it but can't KO it now, and healing means you can't KO it next turn:  recovery score
+# When does it hard switch:
 
-At full HP:  -10
-At 90% HP or more:  -9
-At full HP while you are taking end of turn damage:  -1
+## Can it switch at all:
 
-Recovery score is the "Recovery" line in the table. Rest works the same way, and it needs a way to wake up, or you must be taking passive damage, or the AI must be statused (50%).
+It can't hard switch when:
 
-## Sleep:
+    It is trapped: Mean Look, Block, a binding move like Wrap, Ingrain, Fairy Lock, your Shadow Tag, Arena Trap (if it's grounded) or Magnet Pull (if it's Steel)
+    It has no Pokemon left in the back
+    It hard switched in last turn. See "The turn after a switch"
+    It is locked into a move: recharging after Hyper Beam, charging a two turn move, or in the middle of Outrage or Rollout
+    It is a scripted trial battle
 
-See the table for the score. These block it:  Early Bird, Shed Skin, Synchronize when the AI could be slept, Hydration in rain, a target that is already Yawned, an immune target.
-Immune targets, such as Spore on a Grass type, get -10.
+Ghost types and Shed Shell ignore trapping. In testing, Mean Look stopped every switch, and a Ghost type under Mean Look still switched 75% of the time.
 
-## Toxic, poison, burn and paralysis:
+Encore, Taunt, Disable and a Choice lock do not trap it. See "Encore, Taunt and Choice lock".
 
-The AI won't use these if your Pokemon would benefit. It scores them 0 in these cases:
+## How often, and after how many turns:
 
-    You have Facade or Psycho Shift
-    Your ability is Shed Skin, Guts, Quick Feet, Marvel Scale or Natural Cure (if you can switch)
-    Poison only: Poison Heal, Toxic Boost
-    Burn only: Flare Boost
-    Paralysis only: you have Rest
+When a rule fires, it hard switches 75% of the time. The other 25% of turns it doesn't check for a switch at all. So every "75%" in this guide is a rule that always fires when the check runs.
 
-Already statused or immune: -10
+There is no counter that builds up. The roll is fresh every turn, so:
 
-## Substitute:
+    Switched by the end of turn 1:   75%
+    Switched by the end of turn 2:   94%
+    Switched by the end of turn 3:   98%
 
-The AI uses it only when your predicted move is weak. In testing, it was used when you couldn't 2HKO the AI and not used when you could.
-    At 25% HP or less, or already has one:  -10
-    You have a sound move or Infiltrator:   -8
+Only these rules wait a set number of turns: badly poisoned (7 turns), Perish Song (its last count), switching to absorb your move (not again for 2 turns), and the turn after a switch.
 
-## Protect:
+## The turn after a switch:
 
-In single battles Protect is rarely clicked. It needs a reason:
+When the AI hard switches, the Pokemon that comes in can't hard switch on its next turn. In testing it switched 0 times out of 180, across the weak attacks, "you can KO it" and "you can 2HKO it" rules.
 
-    You are poisoned, burned, seeded or taking other end of turn damage AND you can KO or 2HKO the AI
-    You will faint to end of turn damage this turn
-    You are trapped and taking end of turn damage
-    It predicts Explosion, or a move from you that was already in the air or underground
-    It holds an item it wants to activate, like a Toxic Orb, or has an ability like Speed Boost
+If you also switch that turn, the block is lifted and it can switch straight away. A Pokemon sent in after a KO has the same block for its first turn.
 
-Score when it has a reason:
-    Stall:  +3 (+7 if you are trapped)
-    All others: same as Leech Seed in the table
+## What it needs in the back:
 
-Used Protect last turn:  -6 (50%), no score change other 50%
-Used it two turns in a row:  -10
+Every hard switch needs a back Pokemon that does something against you. This table answers "if it has X in the back, can it still switch?". Each number is how often it hard switches. 75% means the rule always fires. Tested with 20 tries per box.
 
-## Pivots (U-turn, Volt Switch, Flip Turn, Parting Shot, Teleport):
+These words mean:
+    Resists you:  none of your moves would 3HKO it
+    Walls you:  its Def is above your Attack and its Sp. Def above your Sp. Atk, for the sides you attack with, but you can still 3HKO it
+    Safe:  your guessed move does less than half its HP
+    Fast kill:  faster than you and can KO you
+    Weak attacks:  the AI's best attack does under 1/3 of your current HP
 
-The AI wants to hard switch and the pivot would go first (it clicks this instead):  +9
-The AI moves second and a back Pokemon walls you, resists you or is faster:  +9
-The AI is at -3 in its attacking stat:  +9
-The AI moves first with no reason to leave:  0
-No good back Pokemon, and you can 2HKO it or it isn't an attacking style:  -9
+|Back Pokemon|Weak attacks, you can't 3HKO it|Weak attacks, you can 3HKO it|You can 2HKO it|You can KO it, it's slower|You can KO it, it's faster
+|Nothing useful|0|0|0|0|0
+|Can KO you, but slower|0|0|0|0|0
+|Fast kill, but dies to your move|0|0|0|0|0
+|Faster and safe|75|75|0|0|0
+|Walls you|0|75|0|75|0
+|Resists you|0|75|37 or 19|75|75
+|Resists you and is faster|0|75|37 or 19|75|75
+|Resists you and can KO you|75|75|75|75|75
+|Fast kill and safe|75|75|0|75|75
 
-## Hazards:
+    "37 or 19":  37% if the AI can only 3HKO you, 19% if the AI can 2HKO you.
+    If the AI can KO you first, it never switches for these reasons. It just attacks. Tested 0 of 180.
+    "Resists you and can KO you" switches 75% even when nothing is threatening the AI, on Attacker, Setup, Status and Screens styles.
+    The "You can 2HKO it" column needs the AI to be an Attacker, Setup, Status or Screens style. It also stays in if it knows a setup move it can still use, has a useful boost, or its strongest attack drains HP.
 
-    You have 1 Pokemon left:                                   0 (no bonus at all)
-    Already maxed:                                             -10 or more
-    You know Rapid Spin, Defog or Magic Coat:                  -10 (50%), no score change other 50%
-    You have used Rapid Spin or Defog in this battle:          -9 (50%), no score change other 50%
-    Second or third layer, and you have a hazard remover:      -10
+> The nuzlocke takeaway: if its back Pokemon can't resist you, wall you, or outspeed you safely, it isn't going anywhere. A slow Pokemon that only threatens a KO doesn't count.
 
-If you have under 4 Pokemon left, or Magic Bounce, the "you know" line is skipped. A Ghost type AI also ignores your Rapid Spin, because it blocks it.
+## Can 2HKO it: switch now, or after one hit:
 
-Use the table for the score. Adding a hazard to a set usually makes the Pokemon Hazards style.
+Usually after one hit.
 
-## Hazard removal:
+    Full HP, you can 2HKO it:  it only switches if a back Pokemon resists you (37% or 19%, or 75% if that Pokemon can also KO you). Otherwise it stays and attacks.
+    After your first hit, you can KO it:  75% if a back Pokemon resists you, or has a fast kill and is safe, or walls you (only when the AI is slower).
 
-Rapid Spin or Defog, hazards on the AI's side and it has a back Pokemon:
-    Same as Leech Seed in the table
+So the turn to expect a switch is the turn after you hit it once. If it can KO you first, it never switches either turn.
 
-## Phazing (Roar, Whirlwind, Haze, Clear Smog):
+## Encore, Taunt and Choice lock:
 
-Only if the AI can't kill you, and you have a boost that matters. A Phazer also phazes when hazards are up on your side.
+None of these trap it. What happens depends on what it is stuck with. A move Encore blocks counts as -100, so it can only click the Encored move. Tested with 20 tries per back Pokemon.
 
-    Roar, Phazer style:          +8
-    Haze, Phazer style:          +8
-    Others:                      same as "Rain Dance" in the table
+|You did this|How often it switches|What it needs in the back
+|Encored a strong attack|Same as normal|Same as the table above
+|Encored a weak attack|75%|Faster and safe, fast kill and safe, or resists you and can KO you. Walls or resists alone only if you can 3HKO it
+|Encored a status move that still works (Toxic on a healthy target, Recover when hurt)|Stays|Only "Resists you and can KO you"
+|Encored a status move that now does nothing (Swords Dance, Recover at full HP, Toxic on a poisoned target)|75%|Faster, walls you, resists you, or fast kill. Must be safe
+|Encored Protect|Never|Nothing works
+|Taunted, its attack is strong|Stays|
+|Taunted, its attack is weak|75%|Faster and safe, fast kill and safe, or resists you and can KO you
+|Choice locked into a strong attack|Same as normal|Same as the table above
+|Choice locked into a weak attack|75%|Same as an Encored weak attack, and a slow Pokemon that can KO you also counts
+|Choice locked into a move that can't hit you|75%|Anything that won't die to you and is safe, even a slow Pokemon
 
-## Taunt:
+Swords Dance and other boosts always count as doing nothing while Encored, because setup gets -10 under Encore.
 
-If you have any status move at all, Taunt gets +8 straight away.
+It checks every turn of the Encore, at the same 75%.
 
-If it also predicts a status move from you, or your Pokemon has a Stall, Cleric, Screens, Hazards or Baton Pass style, it adds the status score too (same as Leech Seed in the table). That is how you get the high numbers in the table.
+## Weak attacks (the main reason it switches):
 
-It doesn't use Taunt on a sleeping target or on a Choice locked target.
+If the AI's best attack does under 1/3 of your current HP, it counts all its moves as bad. If you have Leftovers or a healing move, that healing is added to your HP for this check. This is the main reason the AI seems to switch at random.
 
-## Encore and Disable:
-
-Only if the AI moves first and you have used a move already.
-    Encore, your last move was a status move or does nothing to the AI:    same as Leech Seed in the table
-    Disable, your last move is also your predicted move:                   same as Leech Seed in the table
-    Disable, your last move kills the AI:                                  same as "Rain Dance" in the table
-
-## Other status moves:
-
-    Perish Song, you are trapped:     same as Leech Seed in the table
-    Trick Room, your team is faster:  same as Leech Seed in the table
-    Tailwind:                         same as Toxic in the table, higher on a Cleric, Screens or Phazer
-    Fake Out, first turn out:         +8
-    Curse, Belly Drum with a physical attack:  same as an Attack boost
-    Baton Pass, no boosts:            -3 on a Baton Pass style, -6 otherwise
-    Memento:                          -5
-    Heal Bell, nobody statused:       -10
-    Explosion:                        treated as an attack. Fast kill +9, or last stand +9
-
-# Switch AI:
-
-The AI checks for a switch before it picks a move. 25% of the time it doesn't check at all that turn. So every line below that says 75% is a rule that always fires when the check runs.
-
-The AI can't hard switch if it is trapped or has no one to bring in. Scripted "trial" battles turn switching off. (So does a developer debug flag, which never comes up in normal play.)
-
-Most rules also need a good back Pokemon. In this section:
-    "Resists you" means none of your moves would 3HKO it.
-    "Walls you" means its Def is above your Attack and its Sp. Def above your Sp. Atk, for the sides you actually attack with.
-    "Fast kill" means it is faster than you and it can KO you.
-    "Safe" means your predicted move would do less than half of its HP.
-
-The AI picks its back Pokemon with the scores in "Hard switch and post KO scores".
-
-## Hard switch:
-
-These are in the order the AI checks them.
-
-If the AI predicts a move a back Pokemon absorbs, it will hard switch to that Pokemon 75% of the time.
-    Flash Fire, Sap Sipper, Lightning Rod, Motor Drive, Storm Drain: any time.
-    Volt Absorb, Water Absorb, Dry Skin: only if that Pokemon is missing HP, or your move would 2HKO the AI.
-    If your Pokemon isn't an attacking style, it is 37% of the time.
-    It won't do this if: the AI can kill you first, it has a +2 boost and you can't KO it, or it has +3 Evasion.
-    It won't do this for the next 2 turns after doing it once.
-    It won't do this if you were predicted to use that move last turn and didn't.
-
-If the AI has a Wish coming and doesn't need it itself, it will hard switch to a back Pokemon under half HP 75% of the time.
-
-If the AI's Perish Song count is on its last turn, it will hard switch 75% of the time.
-
-If you have Wonder Guard and the AI can't hurt you, it looks for a back Pokemon that can and switches to it.
-
-If all the AI's attacks do nothing to you, or its best attack does under 1/3 of your current HP, it treats its moves as bad and it will hard switch 75% of the time. This is the main reason the AI seems to switch at random, so see "Weak attacks" below.
-    A Pokemon with a usable status move doesn't use this rule.
-
-If the AI has Natural Cure and is statused, it will hard switch 75% of the time.
-    Asleep or frozen: any HP.
-    Burn, poison or paralysis: only at 50% HP or more.
-    Not if hazards would hurt it a lot on the way back in.
-
-If the AI has Regenerator, is at 50% HP or less, and you can KO or 2HKO it first, it will hard switch 75% of the time.
-    Needs a back Pokemon that resists you.
-    Not if it can kill you first.
-
-If the AI is Yawned, it will hard switch 75% of the time, only if a back Pokemon has a fast kill on you.
-    Not if the AI can kill you first, or if it has Early Bird, Shed Skin, Natural Cure, Sleep Talk, Snore, or a Lum or Chesto Berry.
-
-If the AI is asleep, it will hard switch 37% of the time.
-    Not if it has a +2 boost, Sleep Talk, Snore or Rest.
-    The back Pokemon must survive your predicted move.
-
-If the AI is cursed or has a Nightmare, it will hard switch 75% of the time.
-    Not if it has Magic Guard or can kill you.
-
-If the AI is badly poisoned and has been for 7 turns, it will hard switch 75% of the time. Before that, it stays.
-
-If the AI has Leech Seed, it will hard switch 19% of the time.
-    Not if it has a useful boost or can kill you.
-
-If your predicted move kills the AI, the AI moves second, and it can't kill you first, it will hard switch 75% of the time.
-    Needs a back Pokemon that:  is immune to your predicted move and (is faster, walls you or resists you), or walls or resists you and is safe, or has a fast kill and is safe, or would kill you through Rough Skin or similar if you hit it.
-    If nobody qualifies, it stays and attacks.
-
-If the AI is an Attacker, Setup, Status or Screens style and has Attack, Sp. Atk or Accuracy at -3 or lower, with no way to use its other attacking stat, it will hard switch 75% of the time.
-    Needs a back Pokemon that walls you, resists you, or is faster and safe.
-
-## Weak attacks:
-
-If the AI's best attack does under 1/3 of your current HP, it counts all its moves as bad. If you have Leftovers or a healing move, that healing is added to your HP for this check.
-
-If that is true, it will hard switch 75% of the time if a back Pokemon:
-    Can KO you or 2HKO you, or
-    Resists you, and the AI doesn't already resist you (so you can 3HKO the AI), or
-    Walls you, and the AI doesn't already wall you
-
-The back Pokemon must also be faster, wall you or resist you, and be safe from your predicted move.
+It then hard switches 75% of the time if a back Pokemon is faster than you, walls you or resists you, and is safe. Walls and resists only count if you can 3HKO the AI, since otherwise it already walls you itself.
 
 It stays in if:
     It knows Protect (single battles)
     It has a pivot move like U-turn that can hit you
+    It has a status move it can still use
     You are bound by Wrap or similar
     You are trapped with a Perish Song count running
     It is behind a Substitute you can't break
 
-This is why chip damage matters. If you are at high HP and the AI is doing small damage, expect a switch. If your HP drops, the same attack stops being "weak".
+> This is why chip damage matters. At high HP you make its attacks "weak" and invite a switch. Once your HP drops, the same attack stops being weak and it stays in.
 
 ## Save the sweeper:
 
-This only applies in single battles, to an Attacker, Setup, Status or Screens style that can't kill you this turn.
+Single battles only, for an Attacker, Setup, Status or Screens style that can't KO you this turn.
 
-If you can KO the AI, it will hard switch 75% of the time if a back Pokemon:
-    Has a fast kill on you and is safe, or
-    Resists you
+If you can KO the AI, it hard switches 75% of the time if a back Pokemon has a fast kill on you and is safe, or resists you.
 
 If you can't KO the AI, it needs a back Pokemon that resists you:
-    That Pokemon can also KO you: it will hard switch 75% of the time.
-    You can 3HKO the AI, and the AI can 3HKO but not 2HKO you: it will hard switch 37% of the time.
-    You can 3HKO the AI, and the AI can 2HKO you: it will hard switch 19% of the time.
-    You can't 3HKO the AI: it stays in.
+    That Pokemon can also KO you:                                 75%
+    You can 3HKO the AI, and the AI can 3HKO but not 2HKO you:    37%
+    You can 3HKO the AI, and the AI can 2HKO you:                 19%
+    You can't 3HKO the AI:                                        stays
 
 It stays in, whatever the case, if:
     It is paralyzed, without Quick Feet or Guts
     You are trapped and taking damage
     Hazards would hurt it a lot on the way back in
-    It predicts its own Protect or Fake Out
+    It guesses its own Protect or Fake Out
 
 When you can't KO the AI, it also stays in if:
     It has a useful stat boost, or +3 Evasion
@@ -430,51 +320,109 @@ When you can't KO the AI, it also stays in if:
 
 If it has a fast pivot move, it clicks that instead of hard switching.
 
-## Just switched in:
+## Every other switch rule:
 
-A Pokemon the AI just hard switched in won't use most of these rules on its next turn, so it can't switch straight back out. If you switch that same turn, this is cancelled and it can switch again.
+These are in the order the AI checks them.
 
-A Pokemon that came in after a KO also has this for its first turn.
+If the AI guesses a move a back Pokemon absorbs, it hard switches to that Pokemon 75% of the time.
+    Flash Fire, Sap Sipper, Lightning Rod, Motor Drive, Storm Drain: any time.
+    Volt Absorb, Water Absorb, Dry Skin: only if that Pokemon is missing HP, or your move would 2HKO the AI.
+    If your Pokemon isn't an attacking style, it is 37% of the time.
+    Not if the AI can kill you first, has a +2 boost and you can't KO it, or has +3 Evasion.
+    Not again for the next 2 turns after doing it once.
+    Not if you were guessed to use that move last turn and didn't.
 
-## Hard switch and post KO scores:
+If the AI has a Wish coming and doesn't need it itself, it hard switches to a back Pokemon under half HP 75% of the time.
 
-When the AI needs a back Pokemon, after a KO or for a hard switch, it scores each one and uses the highest. These are the real scores, checked in a real battle.
+If the AI's Perish Song count is on its last turn, it hard switches 75% of the time.
 
-    +14:    It is faster than you (ties count as faster)
-    +31:    It can KO you
-    +8:     It can KO you with a priority move (this also counts as being faster, so +14 if it wasn't)
-    +8:     It can KO you and has Moxie or a trapping ability
-    +8:     It can KO you with Fell Stinger or Pursuit
-    +2:     It can't KO you but does at least half your HP
-    +17:    Resists you (none of your moves would 3HKO it)
-    +2:     Walls you (only if it doesn't resist you, and you can 3HKO but not 2HKO it)
-    -1:     One of your moves would 2HKO it
-    -39:    It is slower and you would KO it (score can't go below 0)
-    -15:    It is faster, you would KO it, and it can't KO you (score can't go below 0)
-    -1:     It is faster, you would KO it, and it can KO you
-    -1:     It has no usable moves (this replaces its whole score)
+If you have Wonder Guard and the AI can't hurt you, it looks for a back Pokemon that can and switches to it.
 
-So the common totals, best first:
+If all the AI's attacks do nothing to you, or they are weak (see "Weak attacks"), it hard switches 75% of the time.
 
-    70:     KO + faster + priority + resists you
-    62:     KO + faster + resists you
-    53:     KO + faster + priority
-    48:     KO + resists you
-    45:     KO + faster
-    44:     KO + faster, but you can 2HKO or KO it
-    33:     KO + walls you
-    33:     Resists you + faster + does half your HP
-    31:     KO, or resists you + faster
-    30:     KO, but you can 2HKO it
-    19:     Resists you + does half your HP
-    17:     Resists you
-    16:     Faster + does half your HP
-    14:     Faster
-    13:     Faster, but you can 2HKO it
-    2:      Does half your HP, or walls you
-    0:      Slower and dies
+If the AI has Natural Cure and is statused, it hard switches 75% of the time.
+    Asleep or frozen: any HP.
+    Burn, poison or paralysis: only at 50% HP or more.
+    Not if hazards would hurt it a lot on the way back in.
 
-Rules for the highest score:
+If the AI has Regenerator, is at 50% HP or less, and you can KO or 2HKO it first, it hard switches 75% of the time.
+    Needs a back Pokemon that resists you.
+    Not if it can kill you first.
+
+If the AI is Yawned, it hard switches 75% of the time, only if a back Pokemon has a fast kill on you.
+    Not if the AI can kill you first, or if it has Early Bird, Shed Skin, Natural Cure, Sleep Talk, Snore, or a Lum or Chesto Berry.
+
+If the AI is asleep, it hard switches 37% of the time.
+    Not if it has a +2 boost, Sleep Talk, Snore or Rest.
+    The back Pokemon must survive your guessed move.
+
+If the AI is cursed or has a Nightmare, it hard switches 75% of the time.
+    Not if it has Magic Guard or can kill you.
+
+If the AI is badly poisoned and has been for 7 turns, it hard switches 75% of the time. Before that, it stays.
+
+If the AI has Leech Seed, it hard switches 19% of the time.
+    Not if it has a useful boost or can kill you.
+
+If your guessed move kills the AI, the AI moves second, and it can't kill you first, it hard switches 75% of the time.
+    Needs a back Pokemon that is immune to your guessed move and (is faster, walls you or resists you), or walls or resists you and is safe, or has a fast kill and is safe, or would kill you through Rough Skin or similar if you hit it.
+    If nobody qualifies, it stays and attacks.
+
+If the AI is an Attacker, Setup, Status or Screens style and has Attack, Sp. Atk or Accuracy at -3 or lower, with no way to use its other attacking stat, it hard switches 75% of the time.
+    Needs a back Pokemon that walls you, resists you, or is faster and safe.
+
+# Who comes in after a KO:
+
+When the AI needs a back Pokemon, after a KO or for a hard switch, it scores each one and sends in the highest. These are the real scores, checked in a real battle. It scores them against the Pokemon you have out when it chooses.
+
+    +14: It is faster than you (ties count as faster)
+    +31: It can KO you
+    +8: It can KO you with a priority move (this also counts as faster, so +14 if it wasn't)
+    +8: It can KO you and has Moxie or a trapping ability
+    +8: It can KO you with Fell Stinger or Pursuit
+    +2: It can't KO you but does at least half your HP
+    +17: It resists you (none of your moves would 3HKO it)
+    +2: It walls you (only if it doesn't resist you, and you can 3HKO but not 2HKO it)
+    -1: One of your moves would 2HKO it
+    -39: It is slower and you would KO it (the score can't go below 0)
+    -15: It is faster, you would KO it, and it can't KO you (can't go below 0)
+    -1: It is faster, you would KO it, and it can KO you
+    -1: It has no usable moves (this replaces its whole score)
+
+How to work it out:
+
+    1. Take each Pokemon left in its back.
+    2. Add up the lines that fit, against your Pokemon on the field.
+    3. The highest total comes in.
+
+Example, against your fast special attacker:
+
+    Back Pokemon A, faster than you and can KO you:   14 + 31 = 45
+    Back Pokemon B, slower and resists you:            17
+    Back Pokemon C, slower and you would KO it:        0
+    A comes in.
+
+Common totals, best first:
+
+    70: KO + faster + priority + resists you
+    62: KO + faster + resists you
+    53: KO + faster + priority
+    48: KO + resists you
+    45: KO + faster
+    44: KO + faster, but you can 2HKO or KO it
+    33: KO + walls you
+    33: Resists you + faster + does half your HP
+    31: KO, or resists you + faster
+    30: KO, but you can 2HKO it
+    19: Resists you + does half your HP
+    17: Resists you
+    16: Faster + does half your HP
+    14: Faster
+    13: Faster, but you can 2HKO it
+    2: Does half your HP, or walls you
+    0: Slower and dies
+
+Ties:
 
     A Pokemon that would die to you loses a tie to one that wouldn't.
     Otherwise a tie is a coin flip against each later Pokemon, so later Pokemon are more likely.
@@ -484,28 +432,93 @@ Rules for the highest score:
 
 One exception. If the top Pokemon doesn't resist you and doesn't have a fast kill, then a Pokemon with Rapid Spin or Defog (when hazards are up and it wouldn't die to you), or a Poison type (when Toxic Spikes are up), comes in first.
 
-# Hardcore mode:
+> In doubles it adds up these scores against both of your Pokemon, and dying to one of them is only -1. A Pokemon that is faster than both and resists both (62) beat one that could KO only one of them (45) in every test.
 
-The AI's scoring is the same in every mode. The only AI code that checks the mode is this rule, and it runs only in Hardcore.
+# Hardcore anti-switch rule:
 
-When you switch, the AI normally keeps the move it already picked. In Hardcore it re-picks using the Pokemon you just brought in, if:
+This is the only part of the AI that changes by mode. It only runs in Hardcore. Everything else in this guide is the same in every mode.
 
-    You are switching back to the Pokemon you had in two switches ago (A to B, then back to A):    100%
+Normally, when you switch, the AI keeps the move it already picked. In Hardcore it throws that move away and picks again against the Pokemon you just brought in, if:
+
+    You switch back to the Pokemon you had out two switches ago (A to B, then back to A):    100%
+    You have switched 8 times in a row or fewer, any other switch:   0%
     You have switched 9 to 11 times in a row:      25%
     You have switched 12 to 15 times in a row:     33%
     You have switched 16 or more times in a row:   50%
 
-It never re-picks if your Pokemon is Yawned. It also won't re-pick into Pursuit.
+How the count works:
+    Each switch adds 1. A Pokemon with Intimidate adds 2.
+    It goes back to 0 when you use a move or an item, or when the AI switches.
 
-The count goes up by 1 each time you switch. A Pokemon with Intimidate adds 2. It resets if you use a move or item, or if the AI switches.
+What it does and doesn't do:
+    It only changes the AI's move. It can't switch out in response.
+    It won't re-pick if your new Pokemon is Yawned.
+    It won't re-pick into Pursuit.
+    U-turn and other pivot moves are moves, not hard switches, so they never trigger the re-pick. Whether they add to the count wasn't tested.
+    Scripted trial battles turn it off, and also turn off hard switching.
 
-So a normal predicted switch is still safe. Double switching back to the same Pokemon is not. The AI will see it and hit it with the right move.
+Examples:
+    A to B to C:  safe, the AI keeps its move.
+    A to B, then straight back to A:  the AI re-picks against A, every time.
+    Lots of switching in one fight:  from the 9th switch in a row, the re-pick starts to happen.
 
-Scripted trial battles turn this off, and also turn off hard switching.
+> A normal predicted switch is still safe. Double switching back to the same Pokemon is not.
 
 # Double battles:
 
-The same AI runs in doubles. Several gym leaders fight in doubles, including Sabrina.
+The same AI runs in doubles, with its own attack scores and target rules. Several gym leaders fight in doubles, including Sabrina. When the battle is down to 1 on 1, the singles rules take over.
+
+## Who it targets, in pictures:
+
+Left and right don't matter. Mirroring the test gave the same numbers. Super effective doesn't matter on its own either. Only damage, KOs and threats move the arrow.
+
+@@doubles
+
+## Target rules:
+
+The AI scores all its moves against each of your Pokemon and uses the best score. Only its single best move against each target gets the attack score; its other attacks get 0. When two targets tie:
+
+    Attacking styles (All-Out, Setup Attacker, Trick Room Attacker):
+        It takes a KO if it has one. Tested 60 of 60, and 160 of 160.
+        If both are in KO range, it goes for the one that can KO the AI back. Then a Mega or Dynamaxed one. Otherwise a coin flip.
+        If neither is in KO range but both take half their HP or more, it goes for the one that can KO the AI. Tested 160 of 160.
+        Otherwise it goes for the bigger share of max HP 25% of the time, so about 63% to 37% overall. Tested 154 of 240.
+
+    Support styles (Utility, Phazer, Team Support):
+        A coin flip, even when one of your Pokemon is in KO range. Tested 83 to 77, and 51 to 49.
+
+    Trick Room Setup:
+        Takes the KO, because its KO scores higher. Otherwise a coin flip.
+
+If its partner has already chosen a move that KOs one of your Pokemon, it treats that Pokemon as handled and goes for the other one. Tested 60 of 60. The AI's first Pokemon picks first, so its second one reacts to it.
+
+## Attacks in doubles:
+
+The AI gives each attack a level, then turns the level into a score based on its style.
+
+    Each foe it hits:                   +4 to the level
+    Each foe it KOs:                    +2
+    Strongest move on a foe (no KO):    +1
+    Hits its partner:                   -3
+
+If a hit does under 1/4 of that foe's max HP, that foe only adds +1 instead of +4. Under 1/3 only adds +2. This doesn't apply to its strongest move on that foe, or to a move with a 50% or better useful side effect.
+
+|Level|All-Out|Setup Attacker|Trick Room Attacker|Trick Room Setup|Utility|Phazer|Team Support
+|12: KOs both foes|19|19|18|18|18|18|16
+|11: hits 2, KOs 1, strongest on 1|17|16|16|6|9|8|9
+|10: hits 2, KOs 1|16|15|15|5|8|7|7
+|9: hits 2, strongest on 1|14|13|14|4|3|6|2
+|8: hits 2|13|12|11|3|2|5|2
+|6: hits 1, KOs it|11|11|10|2|1|4|2
+|5: hits 1, strongest move|10|9|9|1|1|4|2
+|4: hits 1|9|4|3|1|1|4|2
+
+The table above is an exact match for the ROM.
+
+    A spread move that does at least 1/3 of each foe's max HP beats a single target KO. Tested 60 of 60.
+    A spread move under 1/3 on each foe loses to its strongest single target move. Tested 60 of 60.
+    Spread moves do 75% damage in doubles, so check the 1/3 with the reduced damage.
+    Hitting its own partner is only -3 to the level. It picked Earthquake 40 of 40, even when that would KO its own partner.
 
 ## Doubles styles:
 
@@ -520,45 +533,6 @@ The same AI runs in doubles. Several gym leaders fight in doubles, including Sab
     Has screens, Tailwind, Safeguard or similar:  Team Support
     Anything else:                               Utility
 
-These apply until the battle is down to 1 on 1. Then the singles styles and rules are used.
-
-## Attacks in doubles:
-
-The AI gives each attack a level, then turns the level into a score based on its style.
-
-    Each foe it hits:                   +4 to the level
-    Each foe it KOs:                    +2
-    Strongest move on a foe (no KO):    +1
-    Hits its partner:                   -3
-
-If a hit does under 1/4 of the target's max HP, that foe only adds +1 instead of +4. Under 1/3 only adds +2. This is why the AI doesn't spam weak spread moves. A move with a 50% or better useful side effect skips this.
-
-|Level|All-Out|Setup Attacker|Trick Room Attacker|Trick Room Setup|Utility|Phazer|Team Support
-|12: KOs both foes|19|19|18|18|18|18|16
-|11: hits 2, KOs 1, strongest on 1|17|16|16|6|9|8|9
-|10: hits 2, KOs 1|16|15|15|5|8|7|7
-|9: hits 2, strongest on 1|14|13|14|4|3|6|2
-|8: hits 2|13|12|11|3|2|5|2
-|6: hits 1, KOs it|11|11|10|2|1|4|2
-|5: hits 1, strongest move|10|9|9|1|1|4|2
-|4: hits 1|9|4|3|1|1|4|2
-
-The table above is an exact match for the ROM.
-
-## Picking a target:
-
-The AI scores all its moves on each target, then uses the highest score. If two targets tie:
-
-    It prefers the target where it gets more KOs.
-    If it can KO either one, it goes for the foe that can KO the AI.
-    If that also ties, it prefers a Mega or Dynamaxed foe.
-    An attacking style goes for the most damage 25% of the time.
-    Otherwise it is random.
-
-If its partner has already chosen to KO a foe, the AI treats that foe as handled and goes for the other one. The left Pokemon picks first, so the right Pokemon reacts to it.
-
-With no kill on either foe, its target is mostly random, so don't expect it to focus one Pokemon.
-
 ## Status in doubles:
 
     All-Out Attacker almost never uses status, like Attacker in singles.
@@ -568,13 +542,24 @@ With no kill on either foe, its target is mostly random, so don't expect it to f
     Follow Me and Rage Powder are +16 on Utility.
     Protect when its partner uses a spread move that would hit it: +12 to +14.
 
+These were read from the code. Doubles status scores were not tested one by one.
+
 ## Switching in doubles:
 
 Every penalty in doubles counts double. A -10 becomes -20, so bad moves fall much further behind.
 
-It uses the same 25% roll, and the same rules for status, Perish Song, absorbs, Natural Cure and bad moves.
-It does NOT use "predicted move kills the AI" or "Save the sweeper". Those are singles only.
-Back Pokemon are scored with type matchups instead of damage.
+It uses the same 25% skip and the same rules for status, Perish Song, absorbing your move and Natural Cure. The weak attacks rule needs its attacks to be weak against both of your Pokemon. Tested with 24 tries per box:
+
+|Back Pokemon|Weak against both, you can't 3HKO it|Weak against both, you can 3HKO it|Weak against only one|You can KO or 2HKO it
+|Nothing useful|0|0|0|0
+|Can KO you, but slower|0|0|0|0
+|Faster and safe|83|79|0|0
+|Walls you|0|79|0|0
+|Resists you|0|70|0|0
+|Resists you and can KO you|0|75|0|0
+|Fast kill and safe|66|83|0|0
+
+It does NOT use "Save the sweeper" or "your guessed move kills the AI" in doubles. Those are singles only, so in doubles it never switches just because you threaten a KO.
 
 # Items, Mega and Z-Moves:
 
@@ -585,9 +570,158 @@ Trainers need a Mega Ring or Z-Power Ring in their item slots to use those. 88 t
 Most bosses have no healing items. Some do, such as Terry, the Elite Four and Giovanni, who have Full Restores. When they have one:
 
     Below 1/2 HP:  uses it if it would stop you from killing it, and it can't kill you first
-    It won't use it if it predicts you will Fake Out or Explode.
+    It won't use it if it guesses you will Fake Out or Explode.
 
-# Extra details:
+# Full rule details:
+
+#details Damaging moves in detail
+
+Attacks with side effects can add to their score if the effect is useful and very likely:
+
+    Burn, poison, paralysis or freeze hit, with at least 75% chance:   same as the matching status move
+    Flame Charge, Power-Up Punch, other sure self boosts:              same as a boost move
+    Fell Stinger when it KOs and goes first:                           +9
+    Knock Off when you hold an item and the AI can't kill you:         +3
+    Brick Break when you have screens:                                 +3
+    Pursuit when it guesses you will switch:                           +3
+    Feint when it guesses Protect:                                     +3
+    Smack Down when you aren't grounded:                               +3
+
+Penalties on attacks:
+
+    Attack that can't hit you because of type:                 -15
+    Your ability absorbs it (Volt Absorb, Flash Fire and so on):    -20
+    Blocked by Soundproof, Bulletproof, Queenly Majesty:       -10
+    Priority in Psychic Terrain on a grounded target:          -10
+    High Jump Kick style moves under 70% accuracy:             -6
+    Hyper Beam style moves when another move also kills:       -9
+    Explosion style moves when another move also kills:        -4
+    Sucker Punch when it thinks you won't attack:              -9
+
+#end
+
+#details When it sets up and heals
+
+When it sets up:
+
+    If the AI moves first, it sets up unless you can KO it.
+    If the AI moves second, it sets up unless you can 2HKO it.
+    It stops at +3. A Swords Dance scores +5 at +0, +1 and +2, then 0 at +3 and above.
+    It won't use a boost against Unaware, unless the AI has Stored Power or Power Trip.
+    It won't use a boost if you have used a move that would undo it, like Haze or Roar, or when it guesses one.
+    Attack boosts need a physical move, Sp. Atk boosts need a special move. Otherwise it gets -10.
+    Speed boosts only count if the AI isn't already faster than your whole team.
+    Choice locked or Encored: -10.
+
+When it heals, if the AI moves first:
+    You can KO it, and healing would stop that:  recovery score
+    You can 2HKO it, and the heal is more than its current HP:  recovery score (50%), no score change other 50%
+
+If the AI moves second:
+    You can 2HKO it but can't KO it now, and healing means you can't KO it next turn:  recovery score
+
+    At full HP:  -10
+    At 90% HP or more:  -9
+    At full HP while you are taking end of turn damage:  -1
+
+Recovery score is the "Recovery" line in the status table. Rest works the same way, and it needs a way to wake up, or you must be taking passive damage, or the AI must be statused (50%).
+
+#end
+
+#details Sleep, poison, burn, paralysis and Substitute
+
+Sleep: see the table for the score. These block it: Early Bird, Shed Skin, Synchronize when the AI could be slept, Hydration in rain, a target that is already Yawned, an immune target. Immune targets, such as Spore on a Grass type, get -10.
+
+Toxic, poison, burn and paralysis: the AI won't use these if your Pokemon would benefit. It scores them 0 in these cases:
+
+    You have Facade or Psycho Shift
+    Your ability is Shed Skin, Guts, Quick Feet, Marvel Scale or Natural Cure (if you can switch)
+    Poison only: Poison Heal, Toxic Boost
+    Burn only: Flare Boost
+    Paralysis only: you have Rest
+
+    Already statused or immune:  -10
+
+Thunder Wave: the AI takes off 2 whenever its team's average speed is higher than your team's average speed. That counts both whole teams, not just the Pokemon out.
+
+Rain Dance and Sunny Day: the game checks whether the weather would help, but the move itself counts as a Water or Fire move, so that check always passes.
+
+Substitute: the AI uses it only when your guessed move is weak. In testing, it was used when you couldn't 2HKO the AI and not used when you could.
+
+    At 25% HP or less, or already has one:  -10
+    You have a sound move or Infiltrator:   -8
+
+#end
+
+#details Protect, pivots, hazards and phazing
+
+Protect: in single battles it is rarely clicked. It needs a reason:
+
+    You are poisoned, burned, seeded or taking other end of turn damage AND you can KO or 2HKO the AI
+    You will faint to end of turn damage this turn
+    You are trapped and taking end of turn damage
+    It guesses Explosion, or a move from you that was already in the air or underground
+    It holds an item it wants to activate, like a Toxic Orb, or has an ability like Speed Boost
+
+Score when it has a reason:
+    Stall:  +3 (+7 if you are trapped)
+    All others: same as Leech Seed in the table
+
+    Used Protect last turn:  -6 (50%), no score change other 50%
+    Used it two turns in a row:  -10
+
+Pivots (U-turn, Volt Switch, Flip Turn, Parting Shot, Teleport):
+
+    The AI wants to hard switch and the pivot would go first (it clicks this instead):  +9
+    The AI moves second and a back Pokemon walls you, resists you or is faster:  +9
+    The AI is at -3 in its attacking stat:  +9
+    The AI moves first with no reason to leave:  0
+    No good back Pokemon, and you can 2HKO it or it isn't an attacking style:  -9
+
+Hazards:
+
+    You have 1 Pokemon left:                                   0 (no bonus at all)
+    Already maxed:                                             -10 or more
+    You know Rapid Spin, Defog or Magic Coat:                  -10 (50%), no score change other 50%
+    You have used Rapid Spin or Defog in this battle:          -9 (50%), no score change other 50%
+    Second or third layer, and you have a hazard remover:      -10
+
+If you have under 4 Pokemon left, or Magic Bounce, the "you know" line is skipped. A Ghost type AI also ignores your Rapid Spin, because it blocks it. Adding a hazard to a set usually makes the Pokemon Hazards style.
+
+Hazard removal: Rapid Spin or Defog, with hazards on the AI's side and a back Pokemon, scores the same as Leech Seed in the table.
+
+Phazing (Roar, Whirlwind, Haze, Clear Smog): only if the AI can't kill you, and you have a boost that matters. A Phazer also phazes when hazards are up on your side.
+
+    Roar, Phazer style:          +8
+    Haze, Phazer style:          +8
+    Others:                      same as "Rain Dance" in the table
+
+#end
+
+#details Taunt, Encore, Disable and other status moves
+
+Taunt: if you have any status move at all, Taunt gets +8 straight away. If it also guesses a status move from you, or your Pokemon has a Stall, Cleric, Screens, Hazards or Baton Pass style, it adds the status score too (same as Leech Seed in the table). That is how you get the high numbers in the table. It doesn't use Taunt on a sleeping target or on a Choice locked target.
+
+Encore and Disable: only if the AI moves first and you have used a move already.
+    Encore, your last move was a status move or does nothing to the AI:    same as Leech Seed in the table
+    Disable, your last move is also your guessed move:                     same as Leech Seed in the table
+    Disable, your last move kills the AI:                                  same as "Rain Dance" in the table
+
+Other status moves:
+
+    Perish Song, you are trapped:     same as Leech Seed in the table
+    Trick Room, your team is faster:  same as Leech Seed in the table
+    Tailwind:                         same as Toxic in the table, higher on a Cleric, Screens or Phazer
+    Fake Out, first turn out:         +8
+    Curse, Belly Drum with a physical attack:  same as an Attack boost
+    Baton Pass, no boosts:            -3 on a Baton Pass style, -6 otherwise
+    Memento:                          -5
+    Heal Bell, nobody statused:       -10
+    Explosion:                        treated as an attack. Fast kill +9, or last stand +9
+
+#end
+
+#details Extra details
 
 If the AI is locked into a two turn move or you are in the air or underground, it has rare extra switch rules. They only apply in singles or to its last Pokemon in doubles. It looks for a Pokemon that can hit you or isn't hurt by the incoming move.
 
@@ -595,32 +729,39 @@ The AI checks Mold Breaker and similar abilities. If it has one, your ability do
 
 The AI avoids contact moves when contact would kill it, such as into Rocky Helmet at low HP.
 
-If it has Protect and you are predicted to use Explosion, it Protects.
+If it has Protect and you are guessed to use Explosion, it Protects.
 
 It won't use Fake Out if it would lock it into Fake Out with a Choice item, unless that gets a KO.
 
 The AI doesn't use a damaging move into a Substitute as a kill, since one hit can't KO you through it.
 
+When the AI works out damage for picking a target, it caps the damage at your current HP. So two foes that both die to the move count as the same damage.
+
+#end
+
 # What was tested:
 
-Tested in the real game, using the v4.1 ROM on real battles, on a Hardcore save, with a test team:
+Tested in the real game, using the v4.1 ROM in real battles, on a Hardcore save, with a test team:
 
     Every number in the status table, in 6 situations (you are harmless, you can 2HKO, you can KO, each with the AI faster and slower)
-    Fast kill, slow kill, last stand, highest damaging move, priority and speed ties
+    Fast kill, slow kill, last stand, strongest move, priority and speed ties
+    The highest score, +18, and the -15 and -20 penalties
     The 93% damage roll
-    Hard switch rates from 40 to 80 tries each. They land near 75%, 47%, 37% and 19%, give or take sampling
-    All the hard switch and post KO scores
-    Doubles target picking, level table and switch rate
-    The Hardcore re-pick rule
+    The switch tables: 9 kinds of back Pokemon across 40 situations, including Encore, Taunt, Choice lock, trapping and the turn after a switch, 20 tries each
+    All the hard switch and post KO scores, in singles and doubles
+    Doubles targeting: every arrow in the pictures, spread moves, hitting the partner and the partner's KO
+    Doubles switching with 7 kinds of back Pokemon
+    The Hardcore anti-switch rule
 
 Read from the ROM and the public CFRU code but not tested on their own:
 
     Wish, Wonder Guard and two turn move switch rules
-    Encore, Disable, Protect limits and the rarer status moves
+    The highest doubles score (Pledge), Disable, Protect limits and the rarer status moves
+    Being locked into Outrage, Rollout or a recharge (a normal game rule)
     Most abilities that block moves
     Status scores in doubles
     Z-Moves and trainer healing items
 
-Radical Red changes some of the public CFRU numbers. The ones found are in this document: the 25% switch skip, the Hardcore re-pick rule, Reflect and Light Screen at +15, Taunt at up to +15, Setup style status scores, and one screen move being enough for the Screens style. 
+Radical Red changes some of the public CFRU numbers. The ones found are in this guide: the 25% switch skip, the Hardcore anti-switch rule, Reflect and Light Screen at +15, Taunt at up to +15, Pledge at +20, Setup style status scores, one screen move being enough for Screens, and the doubles weak attacks rule needing a good back Pokemon.
 
-The whole AI was then decompiled straight from the ROM, 507 functions, so nothing is hidden. Comparing it to the public code: 147 of 167 move effects have the same penalties and 115 of 152 have the same bonuses. The differences that matter are in this document. The rarest move effects were not each read by hand, so one could still have a detail missing here.
+The whole AI was decompiled straight from the ROM, 507 functions, so nothing is hidden. Comparing it to the public code: 147 of 167 move effects have the same penalties and 115 of 152 have the same bonuses. The differences that matter are in this guide. The rarest move effects were not each read by hand, so one could still have a detail missing here.

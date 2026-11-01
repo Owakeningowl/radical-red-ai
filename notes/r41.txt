@@ -1,0 +1,19 @@
+1 attacker no KO: L super effective, R neutral | style 11 | {'Flamethrower>R': 19, 'Psychic>R': 37, 'Thunderbolt>L': 94, 'Thunderbolt>R': 10} | dmg [46, 23]
+2 attacker no KO: L super effective but bulky, R takes more | style 11 | {'Flamethrower>R': 7, 'Psychic>R': 13, 'SWITCH': 114, 'Thunderbolt>L': 13, 'Thunderbolt>R': 13} | dmg [13, 23]
+3 utility no KO: L super effective, R neutral | style 15 | {'SWITCH': 120, 'Thunderbolt>L': 25, 'Thunderbolt>R': 15} | dmg [46, 23]
+4 utility no KO: L resists, R neutral | style 15 | {'SWITCH': 121, 'Thunderbolt>L': 12, 'Thunderbolt>R': 27} | dmg [11, 23]
+5 attacker: same HP, super effective KOs L, neutral cannot KO R | style 11 | {'Thunderbolt>L': 160} | dmg [91, 45]
+6 utility: same HP, super effective KOs L, neutral cannot KO R | style 15 | {'Thunderbolt>L': 83, 'Thunderbolt>R': 77} | dmg [91, 45]
+7 attacker: neutral KOs low HP L, super effective no KO on R | style 11 | {'Thunderbolt>L': 60} | dmg [23, 46]
+8 attacker: both KOd, L super effective | style 11 | {'Thunderbolt>L': 71, 'Thunderbolt>R': 89} | dmg [91, 45]
+9 attacker: both take 50pct+, no KO, R can KO the AI | style 11 | {'Flamethrower>R': 38, 'Psychic>R': 80, 'Thunderbolt>R': 42} | dmg [91, 45]
+10 utility no KO no switch: L super effective, R neutral | style 15 | {'Thunderbolt>L': 110, 'Thunderbolt>R': 130} | dmg [91, 45]
+11 attacker no KO no switch: L super effective, R neutral | style 11 | {'Flamethrower>R': 24, 'Psychic>R': 37, 'Thunderbolt>L': 154, 'Thunderbolt>R': 25} | dmg [91, 45]
+12 attacker no KO no switch: L super effective but bulky | style 11 | {'Flamethrower>R': 36, 'Psychic>R': 80, 'Thunderbolt>L': 89, 'Thunderbolt>R': 35} | dmg [24, 45]
+13 spread does 1/3+ to both vs single move KO on L | style 11 | {'Psychic>L': 18, 'Psychic>R': 17, 'Thunderbolt>L': 10, 'Thunderbolt>R': 15} | dmg [41, 41, 53, 53]
+14 spread weak (under 1/4) vs single move KO on L | style 11 | {'Psychic>L': 16, 'Psychic>R': 18, 'Thunderbolt>L': 13, 'Thunderbolt>R': 13} | dmg [9, 9, 12, 12]
+15 spread weak, no KO, single target strong | style 11 | {'Hyper Beam>L': 12, 'Hyper Beam>R': 4, 'SWITCH': 44} | dmg [12, 12, 15, 15]
+16 spread KOs both | style 11 | {'Heat Wave>L': 40} | dmg [41, 41, 53, 53]
+17 Earthquake, AI partner healthy, foes grounded | style 11 | {'Psychic>L': 3, 'Psychic>R': 5, 'SWITCH': 45, 'Thunderbolt>L': 2, 'Thunderbolt>R': 5} | dmg None
+(partner now Flying)
+18 same Earthquake with Flying partner | {'Psychic>L': 2, 'Psychic>R': 6, 'SWITCH': 44, 'Thunderbolt>L': 4, 'Thunderbolt>R': 4}

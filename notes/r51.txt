@@ -1,0 +1,18 @@
+50 Encored Toxic, you healthy |   0 |   0 |   0 |   0 |   0 |  75 |   0 |   0 |   0 | picks {0: 165}
+51 Encored Recover, AI at 40pct |   0 |   0 |   0 |   0 |   0 |  80 |   0 |   0 |   0 | picks {0: 164}
+52 Encored weak attack, you 3HKO |   0 |  85 |  85 |  75 |  90 |  75 |   0 |  75 |   0 | picks {0: 83}
+53 Choice locked weak attack, you harmless |   0 |  80 |   0 |   0 |   0 |  60 |  80 |  75 |   0 | picks {0: 121}
+54 Choice locked weak attack, you 3HKO |   0 |  80 |  85 |  75 |  65 |  65 |  80 |  90 |   0 | picks {0: 72}
+55 Choice locked strong attack, you harmless |   0 |   0 |   0 |   0 |   0 |  80 |   0 |   0 |   0 | picks {0: 164}
+56 Choice locked move that cannot hit you |   5 |  65 |  75 |  60 |  70 |  65 |  65 |  80 |   0 | picks {0: 83}
+60 just switched in (cooldown 1): weak attacks, you 3HKO |   0 |   0 |   0 |   0 |   0 |   0 |   0 |   0 |   0 | picks {0: 43, 1: 52, 3: 85}
+61 just switched in: you KO, AI slower |   0 |   0 |   0 |   0 |   0 |   0 |   0 |   0 |   0 | picks {0: 34, 1: 53, 3: 93}
+62 just switched in: you 2HKO |   0 |   0 |   0 |   0 |   0 |   0 |   0 |   0 |   0 | picks {0: 45, 1: 40, 3: 95}
+--- scores
+Fell Stinger fast kill style 2 ['Fell Stinger', 'Psychic', 'Dark Pulse', 'Thunderbolt'] [(18, 0, 0, 0)]
+Fell Stinger, no kill style 2 ['Fell Stinger', 'Psychic', 'Dark Pulse', 'Thunderbolt'] [(0, 0, 0, 2), (0, 2, 0, 0)]
+Status hit fast kill, Status style style 3 ['Nuzzle', 'Toxic', 'Pound', 'Scratch'] [(5, 5, 9, 9)]
+Attacks that cannot hit style 1 ['Thunderbolt', 'Thunder', 'Discharge', 'Shock Wave'] [(-15, -15, -15, -13), (-15, -15, -13, -15), (-13, -15, -15, -15)]
+Status on immune style 3 ['Thunder Wave', 'Toxic', 'Flamethrower', 'Psychic'] [(-10, -10, 0, 2)]
+Absorbed move style 1 ['Thunderbolt', 'Flamethrower', 'Psychic', 'Dark Pulse'] [(-20, 0, 2, 0), (-20, 2, 0, 0)]
+DONE
