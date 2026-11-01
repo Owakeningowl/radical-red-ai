@@ -52,6 +52,8 @@ Every move starts at 0, the AI adds up its rules, and it clicks the highest tota
 
 Doubles numbers are for an All-Out Attacker. Other styles are in the doubles section.
 
+> These are move scores: they decide which move it clicks. Which Pokemon it sends in uses a different score with its own numbers (highest 70 in singles). See "Who comes in after a KO". The two are never compared.
+
     Highest singles, +18:  Fell Stinger or a Z-Move that KOs you and goes first. Tested.
     Highest doubles, +31:  a Pledge move when its partner also has a Pledge move (+20), plus a KO. Read from the code, not tested.
     Lowest, -100:  a move it can't use at all (no PP, Disabled, a status move while Taunted, a move Encore blocks, Heal Block, Throat Chop, Gravity). It stays at -100.
@@ -374,6 +376,8 @@ If the AI is an Attacker, Setup, Status or Screens style and has Attack, Sp. Atk
 # Who comes in after a KO:
 
 When the AI needs a back Pokemon, after a KO or for a hard switch, it scores each one and sends in the highest. These are the real scores, checked in a real battle. It scores them against the Pokemon you have out when it chooses.
+
+> This is a separate score from the move scores (those go up to +18). Each back Pokemon starts at 0 and adds the lines below. The highest in singles is 70 (KO + faster + priority + resists you). The lowest is 0, or -1 if it has no usable moves. In doubles it adds the score against both of your Pokemon, so it can go up to 140.
 
     +14: It is faster than you (ties count as faster)
     +31: It can KO you
